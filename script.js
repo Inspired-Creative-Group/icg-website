@@ -105,23 +105,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ─── Contact Form Handling ───────────────────────────────────
+    // ─── Portfolio Category Filters ─────────────────────────────
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const workCards = document.querySelectorAll('.work-card');
+
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            // Update active pill
+            filterPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const filter = pill.dataset.filter;
+
+            workCards.forEach(card => {
+                const categories = (card.dataset.categories || '').split(' ');
+                
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.classList.remove('filter-hidden');
+                    card.classList.add('filter-visible');
+                } else {
+                    card.classList.remove('filter-visible');
+                    card.classList.add('filter-hidden');
+                }
+            });
+        });
+    });
+
+
+    // ─── Contact Form Handling (Formspree) ───────────────────────
     const form = document.getElementById('contactForm');
+    const formAction = form.getAttribute('action');
+    const isFormspreeConfigured = formAction && !formAction.includes('{form_id}');
     
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
         const btn = form.querySelector('.btn');
         const originalText = btn.textContent;
+
+        // If Formspree is not configured yet, prevent submission and show demo feedback
+        if (!isFormspreeConfigured) {
+            e.preventDefault();
+            btn.textContent = 'Message Sent! ✓';
+            btn.style.background = '#16a34a';
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                form.reset();
+            }, 3000);
+            return;
+        }
         
-        btn.textContent = 'Message Sent! ✓';
-        btn.style.background = '#16a34a';
-        
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            form.reset();
-        }, 3000);
+        // If Formspree IS configured, let the form submit naturally via POST
+        // but show a brief "Sending..." state
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
     });
 
 
