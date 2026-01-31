@@ -969,8 +969,18 @@ ul {
 }
 
 .ai-cap-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent, #ff2d2d);
+    transition: color 0.3s ease;
+}
+
+.ai-cap:hover .ai-cap-icon {
+    color: var(--color-white, #fff);
+}
+
+.ai-cap-icon svg {
+    width: 40px;
+    height: 40px;
 }
 
 .ai-cap h4 {
