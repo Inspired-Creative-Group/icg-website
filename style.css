@@ -2544,3 +2544,85 @@ a.pillar-card-link {
         transition: none !important;
     }
 }
+
+
+/* ─── Progressive Disclosure ─────────────────────────────────── */
+.work-card--hidden-extra {
+    display: none;
+}
+
+.work-tier--hidden {
+    display: none;
+}
+
+.work-show-all {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+/* When revealed */
+.work-card--hidden-extra.revealed {
+    display: block;
+}
+
+.work-tier--hidden.revealed {
+    display: block;
+}
+
+.work-show-all-btn.hidden {
+    display: none;
+}
+
+
+/* ─── LinkedIn Static Cards ──────────────────────────────────── */
+.linkedin-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    text-decoration: none;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin-card:hover {
+    border-color: #0A66C2;
+    transform: translateY(-2px);
+}
+
+.linkedin-card-badge {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0A66C2;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.linkedin-card-content {
+    flex: 1;
+}
+
+.linkedin-card-type {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.linkedin-card-desc {
+    font-size: 0.9rem;
+    color: var(--color-gray-500);
+    line-height: 1.6;
+}
+
+
+/* ─── Portfolio CTA ──────────────────────────────────────────── */
+.work-cta {
+    text-align: center;
+    margin-top: var(--space-3xl);
+}

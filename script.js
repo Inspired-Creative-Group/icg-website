@@ -238,6 +238,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // ─── Portfolio Progressive Disclosure ──────────────────────
+    const showAllBtn = document.getElementById('showAllWork');
+    if (showAllBtn) {
+        showAllBtn.addEventListener('click', () => {
+            // Reveal hidden featured cards
+            document.querySelectorAll('.work-card--hidden-extra').forEach(card => {
+                card.classList.add('revealed');
+            });
+            // Reveal More Work tier
+            document.querySelectorAll('.work-tier--hidden').forEach(tier => {
+                tier.classList.add('revealed');
+            });
+            // Hide the button
+            showAllBtn.classList.add('hidden');
+        });
+    }
+
+
     // ─── Service Block Collapse/Expand ─────────────────────────
     document.querySelectorAll('.service-toggle').forEach(btn => {
         btn.addEventListener('click', () => {

@@ -684,7 +684,7 @@
                             <p class="work-card-desc">All branding and marketing collateral for Panama's luxurious Emerald Private Beach Residences — art direction, web design, production, and print management.</p>
                         </div>
                     </a>
-                    <a href="projects/luchador.html" class="work-card work-card--large animate-in" data-categories="video audio">
+                    <a href="projects/luchador.html" class="work-card work-card--large work-card--hidden-extra animate-in" data-categories="video audio">
                         <div class="work-card-image">
                             <img src="assets/portfolio/luchador-thumbnail.jpg" alt="Luchador — Documentary Series Trailer" loading="lazy" />
                             <div class="work-card-overlay">
@@ -701,7 +701,7 @@
                             <p class="work-card-desc">Music composition, sound design, and audio post-production for a documentary series following a Canadian wrestler training in Mexico City under lucha libre grand master Tony Salazar.</p>
                         </div>
                     </a>
-                    <a href="projects/short-film.html" class="work-card work-card--large animate-in" data-categories="audio video">
+                    <a href="projects/short-film.html" class="work-card work-card--large work-card--hidden-extra animate-in" data-categories="audio video">
                         <div class="work-card-image">
                             <img src="assets/portfolio/08-short-film.jpg" alt="Short Film" loading="lazy" />
                             <div class="work-card-overlay">
@@ -718,10 +718,13 @@
                         </div>
                     </a>
                 </div>
+                <div class="work-show-all animate-in">
+                    <button class="btn btn-ghost work-show-all-btn" id="showAllWork">View All Projects →</button>
+                </div>
             </div>
 
             <!-- Tier 2 — More Work (3-up grid, merged with Additional Work) -->
-            <div class="work-tier work-tier-2">
+            <div class="work-tier work-tier-2 work-tier--hidden">
                 <h3 class="work-tier-label animate-in">More Work</h3>
                 <div class="work-grid-medium">
                     <a href="projects/rogers-chrysler.html" class="work-card work-card--medium animate-in" data-categories="design">
@@ -873,23 +876,44 @@
             </div>
 
             <!-- AI-Generated Work Samples -->
-            <div class="work-tier work-tier-ai animate-in">
+            <div class="work-tier work-tier-ai work-tier--hidden animate-in">
                 <h3 class="work-tier-label">AI-Generated Work</h3>
                 <p class="work-tier-subtitle">Recent AI-enhanced production showcased on LinkedIn</p>
                 <div class="linkedin-grid">
-                    <div class="linkedin-embed">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7412247195376062464?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="AI Work Sample"></iframe>
-                    </div>
-                    <div class="linkedin-embed">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7407164816001310720?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="AI Work Sample"></iframe>
-                    </div>
-                    <div class="linkedin-embed">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7394584679150014464?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="AI Work Sample"></iframe>
-                    </div>
-                    <div class="linkedin-embed">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7394359028681961472?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="AI Work Sample"></iframe>
-                    </div>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7412247195376062464" target="_blank" rel="noopener" class="linkedin-card">
+                        <div class="linkedin-card-badge">LinkedIn</div>
+                        <div class="linkedin-card-content">
+                            <span class="linkedin-card-type">AI-Enhanced Production</span>
+                            <p class="linkedin-card-desc">See our latest AI-orchestrated content on LinkedIn →</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7407164816001310720" target="_blank" rel="noopener" class="linkedin-card">
+                        <div class="linkedin-card-badge">LinkedIn</div>
+                        <div class="linkedin-card-content">
+                            <span class="linkedin-card-type">AI-Enhanced Production</span>
+                            <p class="linkedin-card-desc">See our latest AI-orchestrated content on LinkedIn →</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7394584679150014464" target="_blank" rel="noopener" class="linkedin-card">
+                        <div class="linkedin-card-badge">LinkedIn</div>
+                        <div class="linkedin-card-content">
+                            <span class="linkedin-card-type">AI-Enhanced Production</span>
+                            <p class="linkedin-card-desc">See our latest AI-orchestrated content on LinkedIn →</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7394359028681961472" target="_blank" rel="noopener" class="linkedin-card">
+                        <div class="linkedin-card-badge">LinkedIn</div>
+                        <div class="linkedin-card-content">
+                            <span class="linkedin-card-type">AI-Enhanced Production</span>
+                            <p class="linkedin-card-desc">See our latest AI-orchestrated content on LinkedIn →</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
+
+            <!-- Portfolio CTA -->
+            <div class="work-cta animate-in">
+                <a href="#contact" class="btn btn-primary">Have a Project Like These? Let's Talk →</a>
             </div>
         </div>
     </section>
