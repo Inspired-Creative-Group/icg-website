@@ -1895,27 +1895,55 @@ a.work-card {
     .nav-links {
         display: none;
         position: fixed;
-        top: var(--nav-height);
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.98);
+        z-index: 9999;
+        background: var(--color-black);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
+        padding: var(--space-xl) var(--space-lg);
+        /* Fix iOS Safari rendering bug with backdrop-filter parent */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
     
     .nav-links.open {
         display: flex;
     }
     
-    .nav-link {
-        font-size: 1.2rem;
+    /* Disable backdrop-filter on nav when menu is open (Safari fix) */
+    .nav:has(.nav-links.open) {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: transparent;
     }
     
+    .nav-links .nav-link {
+        font-size: 1.5rem;
+        color: var(--color-gray-300);
+        letter-spacing: 0.08em;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-links .nav-link:hover,
+    .nav-links .nav-link.active {
+        color: var(--color-white);
+    }
+
+    .nav-links .nav-link--cta {
+        margin-top: var(--space-md);
+        font-size: 1.1rem;
+        padding: 0.75rem 2rem;
+        border-radius: 6px;
+    }
+
     .nav-toggle {
         display: flex;
+        z-index: 10000;
     }
     
     .hide-mobile {
