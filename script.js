@@ -76,7 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navLinksContainer.classList.toggle('open');
-        document.body.style.overflow = navLinksContainer.classList.contains('open') ? 'hidden' : '';
+        const isOpen = navLinksContainer.classList.contains('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close mobile menu when clicking a link
@@ -84,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navLinksContainer.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         });
     });
@@ -111,9 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterPills.forEach(pill => {
         pill.addEventListener('click', () => {
-            // Update active pill
-            filterPills.forEach(p => p.classList.remove('active'));
+            // Update active pill and aria-selected
+            filterPills.forEach(p => {
+                p.classList.remove('active');
+                p.setAttribute('aria-selected', 'false');
+            });
             pill.classList.add('active');
+            pill.setAttribute('aria-selected', 'true');
 
             const filter = pill.dataset.filter;
 

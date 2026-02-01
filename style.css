@@ -24,7 +24,7 @@
     --color-gray-300:     #CCCCCC;
     --color-gray-400:     #999999;
     --color-gray-500:     #777777;
-    --color-gray-600:     #555555;
+    --color-gray-600:     #767676;
     
     /* Typography */
     --font-heading: 'Space Grotesk', sans-serif;
@@ -1267,6 +1267,9 @@ ul {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     padding: 0.5rem 1.25rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
     border: 1px solid var(--color-border-light);
     border-radius: 100px;
     background: transparent;
@@ -1746,6 +1749,23 @@ a.work-card {
     padding: 1rem;
 }
 
+/* Form Validation States */
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #ff4444;
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #44ff44;
+}
+
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #ff4444;
+}
+
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #44ff44;
+}
+
 
 /* ═══════════════════════════════════════════════════════════════
    FOOTER
@@ -1788,7 +1808,9 @@ a.work-card {
 }
 
 .footer-links a {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 0.9rem;
     color: var(--color-gray-600);
     padding: 0.25rem 0;
@@ -2320,6 +2342,10 @@ a.pillar-card-link {
 }
 
 .logo-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.logo-carousel:focus-within .logo-carousel-track {
     animation-play-state: paused;
 }
 
