@@ -1947,6 +1947,81 @@ a.work-card {
 }
 
 
+/* Section CTAs */
+.pillars-cta,
+.services-cta,
+.testimonials-cta {
+    text-align: center;
+    margin-top: var(--space-2xl);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    color: var(--color-gray-400);
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* Sticky Contact Pill */
+.sticky-contact {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--color-red);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 900;
+    box-shadow: 0 4px 20px rgba(232, 0, 13, 0.3);
+}
+
+.sticky-contact.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sticky-contact:hover {
+    background: var(--color-red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(232, 0, 13, 0.4);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */

@@ -269,4 +269,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ─── Back to Top Button ────────────────────────────────────
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ─── Sticky Contact Pill ───────────────────────────────────
+    const stickyContact = document.getElementById('stickyContact');
+    const contactSection = document.getElementById('contact');
+    if (stickyContact && contactSection) {
+        window.addEventListener('scroll', () => {
+            const contactTop = contactSection.getBoundingClientRect().top;
+            const pastFirstScreen = window.scrollY > window.innerHeight;
+            const contactInView = contactTop < window.innerHeight;
+            
+            if (pastFirstScreen && !contactInView) {
+                stickyContact.classList.add('visible');
+            } else {
+                stickyContact.classList.remove('visible');
+            }
+        });
+    }
+
 });
