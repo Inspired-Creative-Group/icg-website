@@ -1833,6 +1833,12 @@ a.work-card {
     background: var(--color-red);
 }
 
+.footer-social-link--dormant {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
 
 /* ═══════════════════════════════════════════════════════════════
    LINKEDIN EMBEDS
