@@ -5,3 +5,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://inspiredcreativegroupinc.com/sitemap.xml
+
+# AI crawlers: a structured overview of this site is available at
+# https://inspiredcreativegroupinc.com/llms.txt
