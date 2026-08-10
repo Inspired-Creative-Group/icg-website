@@ -8,5 +8,7 @@
 </head>
 <body>
     <p>Redirecting to <a href="https://www.inspiredcreativegroupinc.com/#about">Inspired Creative Group</a>...</p>
+    <!-- first-party page-view beacon (no cookies, no IDs) - see beacon-worker/ -->
+    <script>(function(){try{navigator.sendBeacon&&navigator.sendBeacon("https://icg-beacon.beacon-worker.workers.dev/pv",JSON.stringify({p:location.pathname,r:document.referrer}))}catch(e){}})();</script>
 </body>
 </html>
