@@ -56,14 +56,19 @@
         .mm-panel td:first-child { color:#fff; white-space: nowrap; }
         .mm-panel p { color:#CCC; }
         .mm-center { text-align:center; }
-        @media (max-width: 900px) { .mm-tiers { grid-template-columns: 1fr; } .mm-panel td:first-child { white-space: normal; } }
+        .mm-video { max-width: 960px; margin: 2rem auto 0; aspect-ratio: 16 / 9; background:#0A0A0A; border:1px solid #222; border-radius: 12px; overflow:hidden; }
+        .mm-video iframe { width:100%; height:100%; border:0; display:block; }
+        .mm-lines { list-style:none; padding:0; margin: 2rem auto 0; max-width: 820px; display:grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+        .mm-lines li { background:#111; border:1px solid #222; border-radius:12px; padding:1.25rem; }
+        .mm-lines h3 { font-family:'Space Grotesk', sans-serif; font-size:1.15rem; color:#fff; margin:0 0 0.4rem; }
+        .mm-lines p { color:#CCC; margin:0; font-size:0.98rem; }
+        @media (max-width: 900px) { .mm-tiers { grid-template-columns: 1fr; } .mm-lines { grid-template-columns: 1fr; } .mm-panel td:first-child { white-space: normal; } }
     </style>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="partners-page">
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html#hero" class="nav-logo">
@@ -89,12 +94,12 @@
         <div class="partners-hero-bg"></div>
         <div class="container">
             <div class="partners-hero-content">
-                <span class="partners-hero-badge gsap-animate">For studios and producers who work with AI</span>
-                <h1 class="partners-hero-title gsap-animate">One machine that remembers everything <span class="text-accent">for every AI tool your studio uses.</span></h1>
-                <p class="partners-hero-subtitle gsap-animate">It lives in your studio. We install it by hand and maintain it remotely. It keeps its own notes.</p>
+                <span class="partners-hero-badge gsap-animate">For studios that work with AI</span>
+                <h1 class="partners-hero-title gsap-animate">One machine. <span class="text-accent">Every tool remembers.</span></h1>
+                <p class="partners-hero-subtitle gsap-animate">It lives in your studio. We set it up. It keeps its own notes.</p>
                 <div class="partners-hero-ctas gsap-animate-cta">
-                    <a href="#mm-contact" class="btn btn-primary">Request pricing for your studio →</a>
-                    <a href="#mm-what" class="btn btn-ghost">See what it does →</a>
+                    <a href="#mm-contact" class="btn btn-primary">Request pricing →</a>
+                    <a href="#mm-proof" class="btn btn-ghost">Watch it work →</a>
                 </div>
                 <div class="mm-hub gsap-animate" aria-hidden="true">
                     <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
@@ -113,38 +118,42 @@
                         </g>
                         <text x="110" y="65" text-anchor="middle">Claude, Codex, Cursor</text>
                         <text x="110" y="155" text-anchor="middle">Your editors' laptops</text>
-                        <text x="110" y="245" text-anchor="middle">Meetings and transcripts</text>
-                        <text x="610" y="65" text-anchor="middle">Notion, Drive, Dropbox</text>
-                        <text x="610" y="155" text-anchor="middle">Slack and email</text>
-                        <text x="610" y="245" text-anchor="middle">Premiere, Resolve, Frame.io</text>
+                        <text x="110" y="245" text-anchor="middle">Meetings</text>
+                        <text x="610" y="65" text-anchor="middle">Notion, Drive</text>
+                        <text x="610" y="155" text-anchor="middle">Slack, email</text>
+                        <text x="610" y="245" text-anchor="middle">Premiere, Resolve</text>
                     </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- THE PROBLEM -->
+    <!-- PROOF -->
+    <section class="section partners-why" id="mm-proof">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">Proof</span>
+                <h2 class="section-title">We built it for ourselves first.<br><span class="text-accent">Watch it work.</span></h2>
+                <p class="section-subtitle">Fresh accounts. Nothing pasted in. Real questions about real work.</p>
+            </div>
+            <div class="mm-video gsap-animate">
+                <iframe src="https://www.youtube-nocookie.com/embed/4EOZkllNoDw" title="Your AI's Memory Isn't Yours. So I Built My Own." loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
     <section class="section partners-problem" id="mm-problem">
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">The problem</span>
-                <h2 class="section-title">Every tool remembers.<br><span class="text-accent">None of it reaches past the tool it lives in.</span></h2>
-                <p class="section-subtitle">What last month's job taught you sits in a folder this month's tool cannot see. So you file the context and point the agents at it, on every job, all day.</p>
+                <h2 class="section-title">Your tools remember.<br><span class="text-accent">Not for each other.</span></h2>
             </div>
-            <div class="partners-problem-grid">
-                <div class="partners-problem-card gsap-animate">
-                    <h3>The walls</h3>
-                    <p>A dozen tools, each with its own corner. A tool remembers the chat, never the timeline, the approved take, or the decision that stuck.</p>
-                </div>
-                <div class="partners-problem-card gsap-animate">
-                    <h3>You are the connector</h3>
-                    <p>The producer is the only thing carrying context between tools. That time comes straight out of the hours you would rather spend making the work.</p>
-                </div>
-                <div class="partners-problem-card gsap-animate">
-                    <h3>Rented memory</h3>
-                    <p>What memory does exist sits on someone else's servers, priced by the seat, and stays there when you leave.</p>
-                </div>
-            </div>
+            <ul class="mm-lines">
+                <li class="gsap-animate"><h3>Claude doesn't know what Codex learned.</h3><p>Every tool keeps its own corner.</p></li>
+                <li class="gsap-animate"><h3>Every job starts with re-explaining.</h3><p>You are the one carrying context between them.</p></li>
+                <li class="gsap-animate"><h3>The memory you do have is rented.</h3><p>Someone else's servers. Priced by the seat.</p></li>
+            </ul>
         </div>
     </section>
 
@@ -155,21 +164,12 @@
                 <span class="section-label">What it does</span>
                 <h2 class="section-title">Three things.<br><span class="text-accent">Nothing you have to run.</span></h2>
             </div>
-            <div class="partners-problem-grid">
-                <div class="partners-problem-card gsap-animate">
-                    <h3>It remembers for every tool</h3>
-                    <p>Claude, Codex, Cursor, your editors' laptops, your notes, your meetings. Every tool plugs into the same memory and asks it before answering.</p>
-                </div>
-                <div class="partners-problem-card gsap-animate">
-                    <h3>It checks itself every night</h3>
-                    <p>Stale notes, duplicates, and two people's notes that disagree get flagged for a human. Nothing is ever deleted.</p>
-                </div>
-                <div class="partners-problem-card gsap-animate">
-                    <h3>Nothing leaves your building</h3>
-                    <p>It runs on its own local models, on a private, encrypted network, behind a door only your approved machines can open.</p>
-                </div>
-            </div>
-            <p class="mm-plain gsap-animate">It does not touch your project files or replace your editing tools. It remembers what your team decided and learned, from every seat.</p>
+            <ul class="mm-lines">
+                <li class="gsap-animate"><h3>Remembers for every tool.</h3><p>Claude, Codex, Cursor, your notes, your meetings. One memory, every tool asks it first.</p></li>
+                <li class="gsap-animate"><h3>Checks itself every night.</h3><p>Stale notes and disagreements get flagged for a human. Nothing is deleted.</p></li>
+                <li class="gsap-animate"><h3>Nothing leaves your building.</h3><p>Local models. A private, encrypted network. Your machine, your memory.</p></li>
+            </ul>
+            <p class="mm-plain gsap-animate">It never touches your project files. It remembers what your team decided.</p>
         </div>
     </section>
 
@@ -178,8 +178,8 @@
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">How it arrives</span>
-                <h2 class="section-title">Installed by hand.<br><span class="text-accent">Maintained remotely.</span></h2>
-                <p class="section-subtitle">A Mac Studio, set up for your studio, connected to the tools you already use. We watch it over a private network. You watch it on its own dashboard. Three studios this quarter.</p>
+                <h2 class="section-title">A Mac Studio in your studio.<br><span class="text-accent">Installed by hand. Watched by us.</span></h2>
+                <p class="section-subtitle">Three studios this quarter.</p>
             </div>
         </div>
     </section>
@@ -189,45 +189,42 @@
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">Pricing</span>
-                <h2 class="section-title">Starting from.<br><span class="text-accent">In US dollars.</span></h2>
-                <p class="section-subtitle">The machine is yours, bought at Apple's price. You pay us to build it and to keep it healthy.</p>
+                <h2 class="section-title">Starting from.<br><span class="text-accent">US dollars.</span></h2>
+                <p class="section-subtitle">The machine is yours, at Apple's price. You pay us to build it and keep it healthy.</p>
             </div>
             <div class="mm-tiers">
                 <div class="mm-tier gsap-animate">
-                    <h3>Solo Producer</h3>
-                    <div class="mm-who">One person, one machine</div>
-                    <div class="mm-price">$5,900 build<small>then $490 a month from day 91</small></div>
+                    <h3>Solo</h3>
+                    <div class="mm-who">One person</div>
+                    <div class="mm-price">$5,900<small>then $490 a month</small></div>
                     <ul>
                         <li>Mac Studio, 128 GB</li>
-                        <li>One seat, three integrations</li>
-                        <li>Nightly and weekly checks, dashboard</li>
-                        <li>First 90 days of care included</li>
+                        <li>Three integrations</li>
+                        <li>90 days of care included</li>
                     </ul>
                 </div>
                 <div class="mm-tier mm-tier--featured gsap-animate">
                     <h3>Studio</h3>
-                    <div class="mm-who">Teams up to ten</div>
-                    <div class="mm-price">$12,000 build<small>then $1,200 a month from day 91</small></div>
+                    <div class="mm-who">Up to ten people</div>
+                    <div class="mm-price">$12,000<small>then $1,200 a month</small></div>
                     <ul>
                         <li>Mac Studio, 256 GB</li>
-                        <li>Up to ten seats, six integrations</li>
-                        <li>Shared projects, who-wrote-what, access rules</li>
-                        <li>Team session, weekly review of flagged memories</li>
+                        <li>Six integrations, shared projects, access rules</li>
+                        <li>Weekly review of what it flagged</li>
                     </ul>
                 </div>
                 <div class="mm-tier gsap-animate">
                     <h3>Company</h3>
-                    <div class="mm-who">Several teams, or strict policies</div>
-                    <div class="mm-price">From $25,000 build<small>then from $2,500 a month</small></div>
+                    <div class="mm-who">Several teams</div>
+                    <div class="mm-price">From $25,000<small>then from $2,500 a month</small></div>
                     <ul>
                         <li>Mac Studio, 512 GB, or two machines</li>
                         <li>Isolation between teams</li>
-                        <li>Self-hosted network, no third-party service</li>
-                        <li>Quarterly review</li>
+                        <li>Self-hosted network, no third party</li>
                     </ul>
                 </div>
             </div>
-            <p class="mm-note gsap-animate">Build fee half at kickoff, half at handoff. If after 90 days the machine has not become part of how you work, we refund the build fee. You keep the Mac.</p>
+            <p class="mm-note gsap-animate">Half at kickoff, half at handoff. Monthly starts on day 91. If after 90 days it hasn't become part of how you work, we refund the build fee. You keep the Mac.</p>
         </div>
     </section>
 
@@ -236,7 +233,7 @@
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">Integrations</span>
-                <h2 class="section-title">Connects to the tools you already use.<br><span class="text-accent">Three included.</span></h2>
+                <h2 class="section-title">Works with the tools you already use.<br><span class="text-accent">Three included.</span></h2>
             </div>
             <div class="partners-faq-list">
                 <div class="partners-faq-item gsap-animate">
@@ -246,20 +243,20 @@
                     </button>
                     <div class="partners-faq-answer">
                         <div class="mm-panel">
-                            <p>An integration is a connector that brings what is in one of your tools into the machine, on a schedule. You pick the tool inside each category.</p>
+                            <p>An integration brings what is in one of your tools into the machine, on a schedule. You pick the tool in each category.</p>
                             <table>
                                 <tr><th>Category</th><th>Examples</th></tr>
-                                <tr><td>Your AI tool</td><td>Claude Code, Codex, Cursor, claude.ai. This one is two-way: your agents ask the machine and write to it.</td></tr>
-                                <tr><td>Documents and notes</td><td>Notion, Google Docs, Coda, Craft, Evernote, Apple Notes. A folder of plain files needs no integration.</td></tr>
-                                <tr><td>Files</td><td>Google Drive, Dropbox, OneDrive, SharePoint, your office file server</td></tr>
+                                <tr><td>Your AI tool</td><td>Claude Code, Codex, Cursor, claude.ai. Two-way: your agents ask it and write to it.</td></tr>
+                                <tr><td>Documents and notes</td><td>Notion, Google Docs, Coda, Craft, Evernote, Apple Notes</td></tr>
+                                <tr><td>Files</td><td>Google Drive, Dropbox, OneDrive, SharePoint, your file server</td></tr>
                                 <tr><td>Chat</td><td>Slack, Microsoft Teams, Discord, Google Chat</td></tr>
                                 <tr><td>Email</td><td>Gmail, Microsoft 365</td></tr>
-                                <tr><td>Project tracker</td><td>ClickUp, Asana, Trello, Monday, Linear, Jira, Notion boards</td></tr>
+                                <tr><td>Project tracker</td><td>ClickUp, Asana, Trello, Monday, Linear, Jira</td></tr>
                                 <tr><td>Meetings</td><td>Zoom or Meet recordings, Fireflies, Otter, a folder of recordings</td></tr>
                             </table>
-                            <p style="margin-top:1rem">If a tool has an export or an API, it is on the menu. If it only has a screen, it is not.</p>
-                            <p><strong>Pricing.</strong> Solo includes any three. Studio includes any six. Each additional integration is about $750. Writing back into your tools from the machine is priced on request.</p>
-                            <p>Your AI tool and your meetings are running on our own machine today. The others are built at setup, tested before handoff, and covered by the 90-day guarantee.</p>
+                            <p style="margin-top:1rem">Has an export or an API? It's on the menu.</p>
+                            <p><strong>Pricing.</strong> Solo includes any three. Studio any six. Each extra is about $750. Writing back into your tools is priced on request.</p>
+                            <p>Your AI tool and your meetings run on our own machine today. The rest is built at setup, tested before handoff, covered by the guarantee.</p>
                         </div>
                     </div>
                 </div>
@@ -272,28 +269,24 @@
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">Questions</span>
-                <h2 class="section-title">What studios ask <span class="text-accent">before saying yes.</span></h2>
+                <h2 class="section-title">Before you say <span class="text-accent">yes.</span></h2>
             </div>
             <div class="partners-faq-list">
                 <div class="partners-faq-item gsap-animate">
-                    <button class="partners-faq-toggle" aria-expanded="false"><span>Two editors work in the same project. Does the machine get in the way?</span><span class="partners-faq-icon">+</span></button>
-                    <div class="partners-faq-answer"><p>No. Your editing tools own the files, the locks and the versions. The machine remembers what each editor decided and learned, and tells you when their notes disagree.</p></div>
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>Two editors in the same project?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>Your editing tools own the files and the locks. The machine remembers what each editor decided, and flags it when their notes disagree.</p></div>
                 </div>
                 <div class="partners-faq-item gsap-animate">
                     <button class="partners-faq-toggle" aria-expanded="false"><span>Does anything leave our building?</span><span class="partners-faq-icon">+</span></button>
-                    <div class="partners-faq-answer"><p>Not by default. The models run on the machine. We reach it for maintenance over a private, encrypted network that only approved machines can join. Companies that do not allow any third-party service can have that network self-hosted.</p></div>
+                    <div class="partners-faq-answer"><p>Not by default. The models run on the machine. We reach it over a private, encrypted network. Firms that allow no third-party service can have that network self-hosted.</p></div>
                 </div>
                 <div class="partners-faq-item gsap-animate">
-                    <button class="partners-faq-toggle" aria-expanded="false"><span>Do we have to change how we work?</span><span class="partners-faq-icon">+</span></button>
-                    <div class="partners-faq-answer"><p>No. Keep your tools. The machine remembers what is in them. Your agents get a short instruction to ask it before answering and to write down what they learn.</p></div>
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>Do we change how we work?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>No. Keep your tools. The machine remembers what is in them.</p></div>
                 </div>
                 <div class="partners-faq-item gsap-animate">
-                    <button class="partners-faq-toggle" aria-expanded="false"><span>What happens if it breaks?</span><span class="partners-faq-icon">+</span></button>
-                    <div class="partners-faq-answer"><p>We see it before you do. It is backed up every night, restore-tested, and we maintain it remotely under the care plan. Hardware is covered by Apple.</p></div>
-                </div>
-                <div class="partners-faq-item gsap-animate">
-                    <button class="partners-faq-toggle" aria-expanded="false"><span>How does the 90-day guarantee work?</span><span class="partners-faq-icon">+</span></button>
-                    <div class="partners-faq-answer"><p>Ninety days after installation, your tools are connected and the dashboard shows your memories growing, or we refund the build fee. You keep the Mac.</p></div>
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>What if it breaks?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>We see it before you do. Backed up nightly, restore-tested, maintained remotely. The hardware is covered by Apple.</p></div>
                 </div>
             </div>
         </div>
@@ -306,7 +299,7 @@
                 <div class="partners-contact-text gsap-animate">
                     <span class="section-label">Request pricing</span>
                     <h2 class="section-title">Tell us about <span class="text-accent">your studio.</span></h2>
-                    <p>Which tools you use and how many people. We reply within a day with a price for your setup.</p>
+                    <p>Your tools, your headcount. A price for your setup within a day.</p>
                 </div>
                 <div class="partners-contact-form-wrapper gsap-animate">
                     <form class="contact-form" id="partnersForm" action="https://formspree.io/f/mbdagppd" method="POST">
@@ -348,7 +341,7 @@
                     <div class="form-success" id="partnerFormSuccess" style="display:none;">
                         <div class="form-success-icon">✓</div>
                         <h3>Got it.</h3>
-                        <p>We will reply within a day with a price for your studio.</p>
+                        <p>A price for your studio within a day.</p>
                     </div>
                 </div>
             </div>
