@@ -22,7 +22,7 @@ Getting started is simple:
 ## Pages
 
 - [Home](https://inspiredcreativegroupinc.com/): what ICG offers and how the production system works
-- [For production teams](https://inspiredcreativegroupinc.com/partners.html): custom AI production systems. Build, Operate, Maintain
+- [The Memory Machine](https://inspiredcreativegroupinc.com/memory-machine.html): one machine in your studio that remembers for every AI tool you use. Installed by hand, maintained remotely, keeps its own notes
 - [Showreel](https://inspiredcreativegroupinc.com/projects/showreel.html): the work in motion
 - [About](https://inspiredcreativegroupinc.com/about/): the founders and the story
 - [Contact](https://inspiredcreativegroupinc.com/contact/): schedule a discovery call

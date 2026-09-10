@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P07TX5YY6H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P07TX5YY6H');
+    </script>
+    <title>The Memory Machine | One machine that remembers for every AI tool your studio uses, Inspired Creative Group Inc.</title>
+    <meta name="description" content="One machine in your studio that remembers everything for every AI tool you use. Installed by hand, maintained remotely, keeps its own notes. Nothing leaves your building.">
+    <meta property="og:title" content="The Memory Machine | Inspired Creative Group Inc.">
+    <meta property="og:description" content="One machine that remembers everything for every AI tool your studio uses. Installed by hand. Maintained remotely. Keeps its own notes.">
+    <meta name="twitter:title" content="The Memory Machine | Inspired Creative Group Inc.">
+    <meta name="twitter:description" content="One machine that remembers everything for every AI tool your studio uses. Installed by hand. Maintained remotely. Keeps its own notes.">
+    <meta name="twitter:image" content="https://inspiredcreativegroupinc.com/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inspiredcreativegroupinc.com/memory-machine.html">
+    <meta property="og:image" content="https://inspiredcreativegroupinc.com/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://inspiredcreativegroupinc.com/memory-machine.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="partners.css">
+    <style>
+        /* Memory Machine page: small additions on top of partners.css. No new fonts, no new colors. */
+        .mm-hub { display:flex; justify-content:center; margin: 2rem auto 0; max-width: 720px; }
+        .mm-hub svg { width:100%; height:auto; }
+        .mm-hub text { font-family: 'Inter', sans-serif; font-size: 13px; fill: #CCCCCC; }
+        .mm-hub .mm-hub-center { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; fill: #FFFFFF; }
+        .mm-plain { font-size: 1.05rem; color: #CCCCCC; max-width: 720px; margin: 0.75rem auto 0; text-align:center; }
+        .mm-tiers { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .mm-tier { background:#111; border:1px solid #222; border-radius: 12px; padding: 1.5rem; }
+        .mm-tier h3 { font-family:'Space Grotesk', sans-serif; font-size: 1.25rem; margin: 0 0 0.25rem; color:#fff; }
+        .mm-tier .mm-who { color:#999; font-size:0.9rem; margin-bottom: 1rem; }
+        .mm-tier .mm-price { font-family:'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; color:#fff; line-height:1.1; }
+        .mm-tier .mm-price small { display:block; font-size: 0.85rem; font-weight: 400; color:#999; margin-top:0.25rem; }
+        .mm-tier ul { list-style:none; padding:0; margin: 1rem 0 0; }
+        .mm-tier li { padding: 0.4rem 0; border-top: 1px solid #222; color:#CCC; font-size:0.95rem; }
+        .mm-tier--featured { border-color: #E8000D; box-shadow: 0 0 40px rgba(232,0,13,0.12); }
+        .mm-note { color:#999; font-size:0.9rem; text-align:center; margin-top:1.5rem; }
+        .mm-panel { max-width: 900px; margin: 1.5rem auto 0; }
+        .mm-panel table { width:100%; border-collapse: collapse; font-size:0.95rem; }
+        .mm-panel th, .mm-panel td { text-align:left; padding: 0.6rem 0.5rem; border-bottom: 1px solid #222; vertical-align: top; }
+        .mm-panel th { color:#999; font-weight:500; font-size:0.8rem; letter-spacing:0.06em; text-transform: uppercase; }
+        .mm-panel td:first-child { color:#fff; white-space: nowrap; }
+        .mm-panel p { color:#CCC; }
+        .mm-center { text-align:center; }
+        @media (max-width: 900px) { .mm-tiers { grid-template-columns: 1fr; } .mm-panel td:first-child { white-space: normal; } }
+    </style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="partners-page">
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html#hero" class="nav-logo">
+                <img src="assets/logo.png" alt="Inspired Creative Group Inc." />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="memory-machine.html" class="nav-link active">The Memory Machine</a>
+                <a href="#mm-contact" class="btn btn-primary nav-cta-btn">Request pricing</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="partners-hero">
+        <div class="partners-hero-bg"></div>
+        <div class="container">
+            <div class="partners-hero-content">
+                <span class="partners-hero-badge gsap-animate">For studios and producers who work with AI</span>
+                <h1 class="partners-hero-title gsap-animate">One machine that remembers everything<br><span class="text-accent">for every AI tool your studio uses.</span></h1>
+                <p class="partners-hero-subtitle gsap-animate">It lives in your studio. We install it by hand and maintain it remotely. It keeps its own notes.</p>
+                <div class="partners-hero-ctas gsap-animate-cta">
+                    <a href="#mm-contact" class="btn btn-primary">Request pricing for your studio →</a>
+                    <a href="#mm-what" class="btn btn-ghost">See what it does →</a>
+                </div>
+                <div class="mm-hub gsap-animate" aria-hidden="true">
+                    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E8000D" stop-opacity="0.35"/><stop offset="100%" stop-color="#E8000D" stop-opacity="0"/></radialGradient></defs>
+                        <circle cx="360" cy="150" r="120" fill="url(#g)"/>
+                        <g stroke="#333" stroke-width="1.5">
+                            <line x1="360" y1="150" x2="110" y2="60"/><line x1="360" y1="150" x2="110" y2="150"/><line x1="360" y1="150" x2="110" y2="240"/>
+                            <line x1="360" y1="150" x2="610" y2="60"/><line x1="360" y1="150" x2="610" y2="150"/><line x1="360" y1="150" x2="610" y2="240"/>
+                        </g>
+                        <rect x="290" y="112" width="140" height="76" rx="10" fill="#0A0A0A" stroke="#E8000D" stroke-width="2"/>
+                        <text x="360" y="145" text-anchor="middle" class="mm-hub-center">The Memory</text>
+                        <text x="360" y="166" text-anchor="middle" class="mm-hub-center">Machine</text>
+                        <g fill="#111" stroke="#333">
+                            <rect x="40" y="42" width="140" height="36" rx="8"/><rect x="40" y="132" width="140" height="36" rx="8"/><rect x="40" y="222" width="140" height="36" rx="8"/>
+                            <rect x="540" y="42" width="140" height="36" rx="8"/><rect x="540" y="132" width="140" height="36" rx="8"/><rect x="540" y="222" width="140" height="36" rx="8"/>
+                        </g>
+                        <text x="110" y="65" text-anchor="middle">Claude, Codex, Cursor</text>
+                        <text x="110" y="155" text-anchor="middle">Your editors' laptops</text>
+                        <text x="110" y="245" text-anchor="middle">Meetings and transcripts</text>
+                        <text x="610" y="65" text-anchor="middle">Notion, Drive, Dropbox</text>
+                        <text x="610" y="155" text-anchor="middle">Slack and email</text>
+                        <text x="610" y="245" text-anchor="middle">Premiere, Resolve, Frame.io</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="section partners-problem" id="mm-problem">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">The problem</span>
+                <h2 class="section-title">Every tool remembers.<br><span class="text-accent">None of it reaches past the tool it lives in.</span></h2>
+                <p class="section-subtitle">What last month's job taught you sits in a folder this month's tool cannot see. So you file the context and point the agents at it, on every job, all day.</p>
+            </div>
+            <div class="partners-problem-grid">
+                <div class="partners-problem-card gsap-animate">
+                    <h3>The walls</h3>
+                    <p>A dozen tools, each with its own corner. A tool remembers the chat, never the timeline, the approved take, or the decision that stuck.</p>
+                </div>
+                <div class="partners-problem-card gsap-animate">
+                    <h3>You are the connector</h3>
+                    <p>The producer is the only thing carrying context between tools. That time comes straight out of the hours you would rather spend making the work.</p>
+                </div>
+                <div class="partners-problem-card gsap-animate">
+                    <h3>Rented memory</h3>
+                    <p>What memory does exist sits on someone else's servers, priced by the seat, and stays there when you leave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IT DOES -->
+    <section class="section partners-why" id="mm-what">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">What it does</span>
+                <h2 class="section-title">Three things.<br><span class="text-accent">Nothing you have to run.</span></h2>
+            </div>
+            <div class="partners-problem-grid">
+                <div class="partners-problem-card gsap-animate">
+                    <h3>It remembers for every tool</h3>
+                    <p>Claude, Codex, Cursor, your editors' laptops, your notes, your meetings. Every tool plugs into the same memory and asks it before answering.</p>
+                </div>
+                <div class="partners-problem-card gsap-animate">
+                    <h3>It checks itself every night</h3>
+                    <p>Stale notes, duplicates, and two people's notes that disagree get flagged for a human. Nothing is ever deleted.</p>
+                </div>
+                <div class="partners-problem-card gsap-animate">
+                    <h3>Nothing leaves your building</h3>
+                    <p>It runs on its own local models, on a private, encrypted network, behind a door only your approved machines can open.</p>
+                </div>
+            </div>
+            <p class="mm-plain gsap-animate">It does not touch your project files or replace your editing tools. It remembers what your team decided and learned, from every seat.</p>
+        </div>
+    </section>
+
+    <!-- HOW IT ARRIVES -->
+    <section class="section partners-process" id="mm-how">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">How it arrives</span>
+                <h2 class="section-title">Installed by hand.<br><span class="text-accent">Maintained remotely.</span></h2>
+                <p class="section-subtitle">A Mac Studio, set up for your studio, connected to the tools you already use. We watch it over a private network. You watch it on its own dashboard. Three studios this quarter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section partners-deliverables" id="mm-pricing">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">Starting from.<br><span class="text-accent">In US dollars.</span></h2>
+                <p class="section-subtitle">The machine is yours, bought at Apple's price. You pay us to build it and to keep it healthy.</p>
+            </div>
+            <div class="mm-tiers">
+                <div class="mm-tier gsap-animate">
+                    <h3>Solo Producer</h3>
+                    <div class="mm-who">One person, one machine</div>
+                    <div class="mm-price">$5,900 build<small>then $490 a month from day 91</small></div>
+                    <ul>
+                        <li>Mac Studio, 128 GB</li>
+                        <li>One seat, three integrations</li>
+                        <li>Nightly and weekly checks, dashboard</li>
+                        <li>First 90 days of care included</li>
+                    </ul>
+                </div>
+                <div class="mm-tier mm-tier--featured gsap-animate">
+                    <h3>Studio</h3>
+                    <div class="mm-who">Teams up to ten</div>
+                    <div class="mm-price">$12,000 build<small>then $1,200 a month from day 91</small></div>
+                    <ul>
+                        <li>Mac Studio, 256 GB</li>
+                        <li>Up to ten seats, six integrations</li>
+                        <li>Shared projects, who-wrote-what, access rules</li>
+                        <li>Team session, weekly review of flagged memories</li>
+                    </ul>
+                </div>
+                <div class="mm-tier gsap-animate">
+                    <h3>Company</h3>
+                    <div class="mm-who">Several teams, or strict policies</div>
+                    <div class="mm-price">From $25,000 build<small>then from $2,500 a month</small></div>
+                    <ul>
+                        <li>Mac Studio, 512 GB, or two machines</li>
+                        <li>Isolation between teams</li>
+                        <li>Self-hosted network, no third-party service</li>
+                        <li>Quarterly review</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mm-note gsap-animate">Build fee half at kickoff, half at handoff. If after 90 days the machine has not become part of how you work, we refund the build fee. You keep the Mac.</p>
+        </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section class="section partners-faq" id="mm-integrations">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">Integrations</span>
+                <h2 class="section-title">Connects to the tools you already use.<br><span class="text-accent">Three included.</span></h2>
+            </div>
+            <div class="partners-faq-list">
+                <div class="partners-faq-item gsap-animate">
+                    <button class="partners-faq-toggle" aria-expanded="false">
+                        <span>See all integrations and pricing</span>
+                        <span class="partners-faq-icon">+</span>
+                    </button>
+                    <div class="partners-faq-answer">
+                        <div class="mm-panel">
+                            <p>An integration is a connector that brings what is in one of your tools into the machine, on a schedule. You pick the tool inside each category.</p>
+                            <table>
+                                <tr><th>Category</th><th>Examples</th></tr>
+                                <tr><td>Your AI tool</td><td>Claude Code, Codex, Cursor, claude.ai. This one is two-way: your agents ask the machine and write to it.</td></tr>
+                                <tr><td>Documents and notes</td><td>Notion, Google Docs, Coda, Craft, Evernote, Apple Notes. A folder of plain files needs no integration.</td></tr>
+                                <tr><td>Files</td><td>Google Drive, Dropbox, OneDrive, SharePoint, your office file server</td></tr>
+                                <tr><td>Chat</td><td>Slack, Microsoft Teams, Discord, Google Chat</td></tr>
+                                <tr><td>Email</td><td>Gmail, Microsoft 365</td></tr>
+                                <tr><td>Project tracker</td><td>ClickUp, Asana, Trello, Monday, Linear, Jira, Notion boards</td></tr>
+                                <tr><td>Meetings</td><td>Zoom or Meet recordings, Fireflies, Otter, a folder of recordings</td></tr>
+                            </table>
+                            <p style="margin-top:1rem">If a tool has an export or an API, it is on the menu. If it only has a screen, it is not.</p>
+                            <p><strong>Pricing.</strong> Solo includes any three. Studio includes any six. Each additional integration is about $750. Writing back into your tools from the machine is priced on request.</p>
+                            <p>Your AI tool and your meetings are running on our own machine today. The others are built at setup, tested before handoff, and covered by the 90-day guarantee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section partners-faq" id="mm-faq">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">Questions</span>
+                <h2 class="section-title">What studios ask <span class="text-accent">before saying yes.</span></h2>
+            </div>
+            <div class="partners-faq-list">
+                <div class="partners-faq-item gsap-animate">
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>Two editors work in the same project. Does the machine get in the way?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>No. Your editing tools own the files, the locks and the versions. The machine remembers what each editor decided and learned, and tells you when their notes disagree.</p></div>
+                </div>
+                <div class="partners-faq-item gsap-animate">
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>Does anything leave our building?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>Not by default. The models run on the machine. We reach it for maintenance over a private, encrypted network that only approved machines can join. Companies that do not allow any third-party service can have that network self-hosted.</p></div>
+                </div>
+                <div class="partners-faq-item gsap-animate">
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>Do we have to change how we work?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>No. Keep your tools. The machine remembers what is in them. Your agents get a short instruction to ask it before answering and to write down what they learn.</p></div>
+                </div>
+                <div class="partners-faq-item gsap-animate">
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>What happens if it breaks?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>We see it before you do. It is backed up every night, restore-tested, and we maintain it remotely under the care plan. Hardware is covered by Apple.</p></div>
+                </div>
+                <div class="partners-faq-item gsap-animate">
+                    <button class="partners-faq-toggle" aria-expanded="false"><span>How does the 90-day guarantee work?</span><span class="partners-faq-icon">+</span></button>
+                    <div class="partners-faq-answer"><p>Ninety days after installation, your tools are connected and the dashboard shows your memories growing, or we refund the build fee. You keep the Mac.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section partners-contact" id="mm-contact">
+        <div class="container">
+            <div class="partners-contact-grid">
+                <div class="partners-contact-text gsap-animate">
+                    <span class="section-label">Request pricing</span>
+                    <h2 class="section-title">Tell us about <span class="text-accent">your studio.</span></h2>
+                    <p>Which tools you use and how many people. We reply within a day with a price for your setup.</p>
+                </div>
+                <div class="partners-contact-form-wrapper gsap-animate">
+                    <form class="contact-form" id="partnersForm" action="https://formspree.io/f/mbdagppd" method="POST">
+                        <input type="hidden" name="_subject" value="Memory Machine pricing request">
+                        <input type="hidden" name="inquiry_type" value="Memory Machine">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mmName">Your name *</label>
+                                <input type="text" id="mmName" name="name" required autocomplete="name" placeholder="Full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="mmStudio">Your studio *</label>
+                                <input type="text" id="mmStudio" name="company" required autocomplete="organization" placeholder="Studio or company">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mmEmail">Email *</label>
+                                <input type="email" id="mmEmail" name="email" required autocomplete="email" placeholder="you@studio.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="mmSeats">How many people</label>
+                                <select id="mmSeats" name="seats">
+                                    <option value="" disabled selected>Select one</option>
+                                    <option value="1">Just me</option>
+                                    <option value="2-10">2 to 10</option>
+                                    <option value="10+">More than 10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mmTools">Which tools do you use?</label>
+                            <input type="text" id="mmTools" name="tools" placeholder="Claude Code, Notion, Slack, Premiere...">
+                        </div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADgzGd1p-2PHlr5a" data-theme="dark" data-size="flexible" style="margin-bottom:1rem;"></div>
+                        <button type="submit" class="btn btn-primary btn-submit" id="partnerSubmitBtn">Request pricing</button>
+                    </form>
+                    <div class="form-success" id="partnerFormSuccess" style="display:none;">
+                        <div class="form-success-icon">✓</div>
+                        <h3>Got it.</h3>
+                        <p>We will reply within a day with a price for your studio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="Inspired Creative Group Inc." class="footer-logo" />
+                    <p class="footer-tagline">Two decades of creative expertise.<br>Amplified by 40+ AI agents.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#work">Work</a>
+                    <a href="memory-machine.html">The Memory Machine</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="index.html#services-creative">Inspired Creative</a>
+                    <a href="index.html#services-ai">Inspired AI Innovation</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="index.html#contact">Contact Us</a>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/juanvalenciaproduction/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Inspired Creative Group Inc.
+                <span class="footer-location">Toronto, Ontario · Halifax, Nova Scotia · Working Globally</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP + Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
+    <script>
+    (function() {
+        'use strict';
+        var toggle = document.getElementById('navToggle');
+        var navLinks = document.getElementById('navLinks');
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function() { navLinks.classList.toggle('open'); toggle.classList.toggle('active'); });
+            navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function() { navLinks.classList.remove('open'); toggle.classList.remove('active'); });
+            });
+        }
+        document.querySelectorAll('.partners-faq-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = btn.closest('.partners-faq-item');
+                var answer = item.querySelector('.partners-faq-answer');
+                var icon = btn.querySelector('.partners-faq-icon');
+                var isOpen = btn.getAttribute('aria-expanded') === 'true';
+                item.parentNode.querySelectorAll('.partners-faq-item').forEach(function(other) {
+                    if (other !== item) {
+                        other.querySelector('.partners-faq-toggle').setAttribute('aria-expanded', 'false');
+                        other.querySelector('.partners-faq-answer').style.maxHeight = null;
+                        other.querySelector('.partners-faq-icon').textContent = '+';
+                    }
+                });
+                if (isOpen) { btn.setAttribute('aria-expanded', 'false'); answer.style.maxHeight = null; icon.textContent = '+'; }
+                else { btn.setAttribute('aria-expanded', 'true'); answer.style.maxHeight = answer.scrollHeight + 'px'; icon.textContent = '×'; }
+            });
+        });
+        var form = document.getElementById('partnersForm');
+        var success = document.getElementById('partnerFormSuccess');
+        var submitBtn = document.getElementById('partnerSubmitBtn');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitBtn.disabled = true; submitBtn.textContent = 'Sending...';
+                var data = new FormData(form);
+                fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }).then(function(response) {
+                    if (response.ok) {
+                        form.style.display = 'none'; success.style.display = 'block';
+                        var cfToken = data.get('cf-turnstile-response') || '';
+                        if (cfToken) {
+                            var gasBody = new URLSearchParams({
+                                first_name: data.get('name') ? data.get('name').split(' ')[0] : '',
+                                to_email: data.get('email') || '',
+                                service: 'Memory Machine',
+                                'cf-turnstile-response': cfToken
+                            });
+                            fetch('https://script.google.com/macros/s/AKfycbzB_Q9aauFWRbdOu9niF49uNrBcFQOXjQ0RnCs8DZTIWKy9JRPYDCCTTJ1QYp9DEY3U/exec', {
+                                method: 'POST', mode: 'no-cors',
+                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                body: gasBody.toString()
+                            });
+                        }
+                    } else {
+                        submitBtn.disabled = false; submitBtn.textContent = 'Request pricing';
+                        alert('Something went wrong. Please try again or email us at info@inspiredcreativegroupinc.com');
+                    }
+                }).catch(function() {
+                    submitBtn.disabled = false; submitBtn.textContent = 'Request pricing';
+                    alert('Connection error. Please try again or email us at info@inspiredcreativegroupinc.com');
+                });
+            });
+        }
+    })();
+    </script>
+    <script src="partners-animations.js"></script>
+    <script>(function(){try{navigator.sendBeacon&&navigator.sendBeacon("https://icg-beacon.beacon-worker.workers.dev/pv",JSON.stringify({p:location.pathname,r:document.referrer||"",t:document.title}))}catch(e){}})();</script>
+</body>
+</html>
