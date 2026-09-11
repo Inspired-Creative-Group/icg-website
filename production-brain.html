@@ -63,7 +63,27 @@
         .mm-lines h3 { font-family:'Space Grotesk', sans-serif; font-size:1.15rem; color:#fff; margin:0 0 0.4rem; }
         .mm-lines p { color:#CCC; margin:0; font-size:0.98rem; }
         @media (max-width: 900px) { .mm-tiers { grid-template-columns: 1fr; } .mm-lines { grid-template-columns: 1fr; } .mm-panel td:first-child { white-space: normal; } }
-    </style>
+    
+/* Hero hierarchy: the pain line sits above the name as a kicker, and the line that
+   explains the product is no longer a third the size of the headline. */
+.mm-kicker{
+  font-family:var(--font-heading);
+  font-size:clamp(1.05rem,2.4vw,1.45rem);
+  font-weight:500;
+  color:var(--color-gray-300);
+  letter-spacing:-.01em;
+  margin:0 0 .55rem;
+}
+.partners-hero-subtitle.mm-lede{
+  font-size:clamp(1.1rem,2.1vw,1.45rem);
+  color:var(--color-gray-200);
+  max-width:640px;
+}
+@media (max-width:768px){
+  .mm-kicker{font-size:1.05rem}
+  .partners-hero-subtitle.mm-lede{font-size:1.08rem}
+}
+</style>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="partners-page">
@@ -94,9 +114,9 @@
         <div class="partners-hero-bg"></div>
         <div class="container">
             <div class="partners-hero-content">
-                <span class="partners-hero-badge gsap-animate">For studios that work with AI</span>
-                <h1 class="partners-hero-title gsap-animate">Stop being <span class="text-accent">your AI's memory.</span></h1>
-                <p class="partners-hero-subtitle gsap-animate">The Production Brain. One machine in your studio. It remembers, it checks, it runs on local models.</p>
+                <p class="mm-kicker gsap-animate">Stop being your AI's memory.</p>
+                <h1 class="partners-hero-title gsap-animate">The Production Brain <span class="text-accent">is here.</span></h1>
+                <p class="partners-hero-subtitle mm-lede gsap-animate">One machine in your studio that remembers, checks, and runs on local models.</p>
                 <div class="partners-hero-ctas gsap-animate-cta">
                     <a href="#mm-contact" class="btn btn-primary">Get a price for my studio →</a>
                     <a href="#mm-proof" class="btn btn-ghost">Watch the proof (14 min) →</a>
