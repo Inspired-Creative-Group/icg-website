@@ -4074,3 +4074,16 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     letter-spacing: -0.02em;
     text-transform: uppercase;
 }
+
+/* Square team photos. Sandy's is zoomed from the top so it crops just above the chest. */
+.team-member-image { border-radius: 8px; }
+.team-member-image img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 50% 12%;
+}
+.team-member-image img[src$="sandy.jpg"] {
+    object-position: 50% 0;
+    transform: scale(1.15);
+    transform-origin: 50% 2%;
+}
