@@ -4059,3 +4059,7 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 /* Sandy's photo is on white, Juan's on mid-grey: tone hers down so the pair sits together */
 .team-member-image img[src$="sandy.jpg"],
 .team-member:hover .team-member-image img[src$="sandy.jpg"] { filter: grayscale(100%) brightness(0.8) contrast(1.05); }
+
+/* Services subline on one line (desktop) */
+.services .section-subtitle { max-width: none; }
+@media (min-width: 769px) { .services .section-subtitle .mobile-br { display: none; } }
