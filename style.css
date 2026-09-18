@@ -4063,3 +4063,6 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 /* Services subline on one line (desktop) */
 .services .section-subtitle { max-width: none; }
 @media (min-width: 769px) { .services .section-subtitle .mobile-br { display: none; } }
+
+/* Agents intro: wide enough that "Our Directors do." ends the second line on desktop */
+.ai-system-intro { max-width: 900px; }
