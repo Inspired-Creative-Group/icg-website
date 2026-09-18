@@ -4052,3 +4052,10 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 /* Menu logo lines up with the hero headline's left edge */
 .nav-inner { max-width: calc(var(--max-width) + 2 * var(--space-lg)); }
 .hero-clients .client-logo-item img { max-width: none; }
+
+/* Both team photos in black and white, including on hover */
+.team-member-image img,
+.team-member:hover .team-member-image img { filter: grayscale(100%); }
+/* Sandy's photo is on white, Juan's on mid-grey: tone hers down so the pair sits together */
+.team-member-image img[src$="sandy.jpg"],
+.team-member:hover .team-member-image img[src$="sandy.jpg"] { filter: grayscale(100%) brightness(0.8) contrast(1.05); }
