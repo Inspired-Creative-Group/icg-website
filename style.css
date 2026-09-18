@@ -4066,3 +4066,11 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 
 /* Agents intro: wide enough that "Our Directors do." ends the second line on desktop */
 .ai-system-intro { max-width: 900px; }
+
+/* Agents section heading at the same size as the other section headings */
+.ai-section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
