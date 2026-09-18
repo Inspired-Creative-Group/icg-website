@@ -3944,3 +3944,111 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     letter-spacing: -0.03em;
 }
 @media (max-width: 768px) { .hero-title { font-size: 9.4vw; } }
+
+/* Client logos cycling over the hero video (ai25.studio style) */
+.hero { flex-direction: column; justify-content: center; }
+.hero-clients {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: var(--space-2xl, 4rem) auto 0;
+}
+.hero-clients-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+}
+.hero-clients .logo-carousel {
+    padding: var(--space-sm) 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.hero-clients .logo-carousel::before,
+.hero-clients .logo-carousel::after { display: none; }
+.hero-clients .logo-carousel-track { gap: var(--space-2xl, 4rem); }
+.hero-clients .client-logo-item {
+    border: 0;
+    background: none;
+    padding: 0;
+    min-height: 0;
+    min-width: 0;
+}
+.hero-clients .client-logo-item img,
+.hero-clients .client-logo-item:hover img {
+    height: 30px;
+    max-width: 140px;
+    filter: brightness(0) invert(1) opacity(0.8);
+}
+.hero-scroll-indicator { display: none; }
+
+/* Smaller menu button, same text size */
+@media (min-width: 769px) {
+    .nav-links .nav-cta-btn { padding: 0.5rem 1.1rem; }
+}
+
+/* Shine sweeping left to right across the logo line (letters split by a small script in index.html) */
+.hero-clients-title .sheen-word { white-space: nowrap; }
+.hero-clients-title.is-sheen .sheen-char {
+    display: inline-block;
+    opacity: 0.45;
+    animation: heroSheen 4.5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 25ms);
+}
+@keyframes heroSheen {
+    0%, 22%, 100% { opacity: 0.45; text-shadow: none; }
+    7%            { opacity: 1;    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 22px rgba(255, 255, 255, 0.5); }
+}
+
+/* Bigger ICG logo in the menu (source is 112px tall, so it stays sharp on retina up to 56px) */
+.nav-logo img { height: 52px; }
+@media (max-width: 768px) { .nav-logo img { height: 44px; } }
+
+/* Menu button: thin red outline, red text, fills red on hover */
+.nav-links .nav-cta-btn {
+    background: transparent;
+    color: var(--color-red-light);
+    border: 1px solid var(--color-red-light);
+    box-shadow: none;
+}
+.nav-links .nav-cta-btn:hover,
+.nav-links .nav-cta-btn:focus-visible {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    color: var(--color-white);
+}
+
+/* Menu over the hero video: no solid bar at the top of the page, just a soft blur that fades out
+   downward (exact.agency style). Once the page scrolls, the original dark bar comes back. */
+.nav:not(.scrolled) {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+.nav::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 -24px 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 100%);
+    transition: opacity 0.3s ease;
+}
+.nav.scrolled::before { opacity: 0; }
+
+/* Menu button as a slim pill */
+.nav-links .nav-cta-btn { border-radius: 999px; }
+@media (min-width: 769px) {
+    .nav-links .nav-cta-btn { padding: 0.35rem 1rem; }
+}
+
+/* Menu logo lines up with the hero headline's left edge */
+.nav-inner { max-width: calc(var(--max-width) + 2 * var(--space-lg)); }
+.hero-clients .client-logo-item img { max-width: none; }
