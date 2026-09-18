@@ -4087,3 +4087,54 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     transform: scale(1.3);
     transform-origin: 50% 2%;
 }
+
+/* "What You Walk Away With" cards, exact.agency capabilities style:
+   photo of real work on top, red number, big uppercase title, then text */
+.value-prop-grid { gap: 1.5rem; align-items: stretch; }
+.value-prop-card {
+    padding: 0 0 2.25rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0d0d0d;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.value-prop-card::before { display: none; }
+.value-prop-card > :not(.value-prop-media) { margin-left: 1.75rem !important; margin-right: 1.75rem !important; }
+.value-prop-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+}
+.value-prop-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.75);
+    transition: filter 0.6s ease, transform 0.8s ease;
+}
+.value-prop-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 55%, #0d0d0d 100%);
+}
+.value-prop-card:hover .value-prop-media img { filter: grayscale(0%) brightness(0.9); transform: scale(1.03); }
+.value-prop-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--color-red);
+    margin-bottom: 0.9rem;
+}
+.value-prop-title {
+    font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.1rem;
+}
+.value-prop-card:nth-child(odd) .value-prop-title { color: var(--color-red); }
+.value-prop-desc { font-size: 1rem; line-height: 1.6; color: var(--color-gray-300, #c8c8c8); }
