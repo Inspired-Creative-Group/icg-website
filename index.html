@@ -204,6 +204,10 @@
     <!-- ═══════════════════════════════════════ -->
     <main id="main-content">
     <section class="hero" id="hero">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-bg-poster.jpg" aria-hidden="true">
+            <source src="assets/video/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-bg-shade" aria-hidden="true"></div>
         <div class="hero-bg-grid"></div>
         <div class="hero-content" id="home">
             <div class="hero-badge gsap-animate" style="display:none;">
@@ -226,9 +230,6 @@
                     </button>
                     <span class="hero-video-label">What We Are About</span>
                 </div>
-            </div>
-            <div class="hero-cta gsap-animate">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
             </div>
             <div class="hero-stats gsap-animate">
                 <div class="hero-stat">
@@ -353,9 +354,6 @@
                     <p class="value-prop-desc">We produce for you now. When you're ready, we help your team build <span class="text-accent">AI workflows</span> designed for how you actually work. No other production company offers that.</p>
                 </div>
             </div>
-            <div class="value-prop-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
-            </div>
         </div>
     </section>
 
@@ -465,7 +463,6 @@
                     <p>Everyone has access to AI tools now. The difference isn't the tools. It's <span class="text-accent">who's directing&nbsp;them.</span></p>
                 </blockquote>
                 <p class="ai-closing">AI can't make you feel something. We can. AI just makes it possible to do more of it.</p>
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call →</a>
             </div>
 
         </div>
@@ -579,10 +576,6 @@
                 </div>
             </div>
 
-            <!-- CTA -->
-            <div class="about-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
-            </div>
         </div>
     </section>
 
@@ -1050,10 +1043,6 @@
                 </div>
             </div>
 
-            <!-- Portfolio CTA -->
-            <div class="work-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call →</a>
-            </div>
         </div>
     </section>
 
@@ -1105,9 +1094,6 @@
                 <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Show testimonial 2 of 4" data-index="1"></button>
                 <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Show testimonial 3 of 4" data-index="2"></button>
                 <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Show testimonial 4 of 4" data-index="3"></button>
-            </div>
-            <div class="testimonials-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call →</a>
             </div>
         </div>
     </section>
@@ -1401,7 +1387,6 @@
 
     </main>
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-    <a href="#contact" class="sticky-contact" id="stickyContact">Schedule a Discovery Call</a>
 
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="script.js"></script>
