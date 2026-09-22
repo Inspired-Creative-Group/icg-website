@@ -4171,3 +4171,7 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (prefers-reduced-motion: reduce) {
     .team-member:hover .team-member-image img { transform: none !important; }
 }
+
+/* Footer links stack one per line, so nothing wraps into stray dividers */
+.footer-links a { display: flex; min-height: 36px; }
+.footer-links a + a::before { content: none; }
