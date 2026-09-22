@@ -9,9 +9,11 @@ deploys on push to `main`.
 `Inspired-Creative-Group/productionbrain-site`, checked out at
 `~/Documents/AI - Programming Projects/productionbrain-site`.**
 
-`production-brain.html` in this repo is a **redirect stub**. Editing it changes nothing a
-visitor sees. Every outreach message sent since 2026-09-10 carries that old URL, so the
-stub has to keep existing, but the page itself lives at <https://theproductionbrain.ai>.
+The product is fully separated from this site (Juan, 2026-09-19): no nav or footer
+link, no sitemap entry, no llms.txt bullet, and the old `production-brain.html`
+redirect stub is deleted (no outreach ever used that URL). The page lives at
+<https://theproductionbrain.ai>. Whether the redesigned site links to it is decided at
+the redesign stage; do not add a link back on your own.
 
 The domain has "the" in it. Juan does not own `productionbrain.ai`; that belongs to
 someone else.
