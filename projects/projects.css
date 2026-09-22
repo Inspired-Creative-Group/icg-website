@@ -1406,3 +1406,13 @@ ul { list-style: none; }
         padding: 0.2rem 0.6rem;
     }
 }
+
+/* Vertical (9:16) embeds: keep the whole video on screen instead of running off the page */
+.video-embed--vertical {
+    padding-bottom: 0 !important;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    max-width: min(100%, 44vh);
+    margin-left: 0;
+    margin-right: auto;
+}
