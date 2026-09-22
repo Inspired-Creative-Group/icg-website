@@ -322,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!isExpanded) {
                     // OPEN
                     btn.setAttribute('aria-expanded', 'true');
-                    btn.style.justifyContent = 'flex-start';
                     layer.classList.add('expanded');
 
                     // Animate num + content from centered to left
@@ -348,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             var closeState = Flip.getState(flipTargets);
                             layer.classList.remove('expanded');
                             btn.setAttribute('aria-expanded', 'false');
-                            btn.style.justifyContent = 'center';
                             Flip.from(closeState, {
                                 duration: 0.4,
                                 ease: 'power2.out',
