@@ -4138,3 +4138,11 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 }
 .value-prop-card:nth-child(odd) .value-prop-title { color: var(--color-red); }
 .value-prop-desc { font-size: 1rem; line-height: 1.6; color: var(--color-gray-300, #c8c8c8); }
+
+/* Label at the start of a service outcome, e.g. CREATIVE DIRECTION */
+.service-outcomes .outcome-label {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--color-white);
+}
+.service-outcomes .outcome-label::after { content: ' -\00a0'; color: var(--color-red); }
