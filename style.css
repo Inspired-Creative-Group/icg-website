@@ -4143,6 +4143,6 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 .service-outcomes .outcome-label {
     font-family: var(--font-heading);
     font-weight: 400;
-    color: var(--color-white);
+    color: inherit;
 }
-.service-outcomes .outcome-label::after { content: ':\00a0'; color: var(--color-red); }
+.service-outcomes .outcome-label::after { content: ':\00a0'; color: inherit; }
