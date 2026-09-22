@@ -4108,7 +4108,8 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     overflow: hidden;
     margin-bottom: 1.75rem;
 }
-.value-prop-media img {
+.value-prop-media img,
+.value-prop-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -4121,7 +4122,12 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     inset: 0;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0) 55%, #0d0d0d 100%);
 }
-.value-prop-card:hover .value-prop-media img { filter: grayscale(0%) brightness(0.9); transform: scale(1.03); }
+.value-prop-card:hover .value-prop-media img,
+.value-prop-card:hover .value-prop-media video { filter: grayscale(0%) brightness(0.9); transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) {
+    .value-prop-media video { display: none; }
+    .value-prop-media { background: #0d0d0d center / cover no-repeat; }
+}
 .value-prop-num {
     display: block;
     font-family: var(--font-heading);
