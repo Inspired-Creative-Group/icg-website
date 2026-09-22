@@ -4293,3 +4293,6 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     z-index: 1;
 }
 .work-card.is-playing .work-card-clip { opacity: 1; }
+
+/* Workflow block sat a full section's worth of space below the section's own padding */
+.ai-system { margin-top: 0; margin-bottom: var(--space-2xl); }
