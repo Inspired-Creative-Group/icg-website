@@ -4217,3 +4217,11 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     }
     .nav-sub-link { font-size: 0.95rem; opacity: 0.75; }
 }
+
+/* Workflow layer cards: numbers and titles line up down the column */
+.ai-layer-btn { justify-content: flex-start; align-items: center; }
+.ai-layer-num { min-width: 2.5rem; flex: none; }
+.ai-layer { padding: var(--space-md) var(--space-lg); }
+/* No gap while the card is collapsed, so it hugs its two lines of text */
+.ai-layer { flex-direction: column; align-items: stretch; gap: 0; }
+.ai-layer--expandable.expanded .ai-layer-detail { margin-top: var(--space-md); }

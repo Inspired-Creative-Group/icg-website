@@ -219,26 +219,16 @@
     var aiLayers = document.querySelector('.ai-layers');
     var aiLayerEls = gsap.utils.toArray('.ai-layer.gsap-animate');
     if (aiLayers && aiLayerEls.length) {
-        // Set initial state
+        // Each layer slides in once, when it reaches the viewport, and stays put.
         gsap.set(aiLayerEls, { autoAlpha: 0, x: -100 });
-
-        // Build a timeline with all 5 layers staggered
-        var layersTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: aiLayers,
-                start: 'top 80%',
-                end: 'bottom 60%',
-                scrub: 1,            // smooth 1s catch-up
-                // markers: true,    // uncomment for debugging
-            }
-        });
-
         aiLayerEls.forEach(function(layer, i) {
-            layersTl.to(layer, {
+            gsap.to(layer, {
+                scrollTrigger: { trigger: layer, start: 'top 90%', toggleActions: 'play none none none' },
                 autoAlpha: 1, x: 0,
-                duration: 1,
+                duration: 0.9,
+                delay: Math.min(i, 2) * 0.08,
                 ease: 'power4.out'
-            }, i * 0.3);  // stagger start within timeline
+            });
         });
     }
 
