@@ -233,6 +233,19 @@
             <p class="hero-subtitle gsap-animate">
                 Your Story. 20+ Years of Experience. Produced at AI Speed.
             </p>
+            <button class="hero-sound gsap-animate" id="heroSound" type="button" aria-pressed="false" aria-label="Turn the background video sound on">
+                <svg class="hero-sound-icon hero-sound-icon--off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+                    <line x1="17" y1="9" x2="22" y2="15"/>
+                    <line x1="22" y1="9" x2="17" y2="15"/>
+                </svg>
+                <svg class="hero-sound-icon hero-sound-icon--on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+                    <path d="M16.5 8.5a5 5 0 0 1 0 7"/>
+                    <path d="M19.5 6a8.5 8.5 0 0 1 0 12"/>
+                </svg>
+                <span class="hero-sound-label">Sound off</span>
+            </button>
             <div class="hero-video gsap-animate">
                 <div class="hero-video-wrapper" id="heroVideo">
                     <img src="assets/hero-video-thumb.jpg" alt="Watch: Get Inspired: Your Story, Amplified" class="hero-video-thumb" />
@@ -1163,6 +1176,25 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/Flip.min.js"></script>
     <script src="gsap-animations.js"></script>
+
+    <!-- Hero sound toggle -->
+    <script>
+    (function() {
+        var btn = document.getElementById('heroSound');
+        var video = document.querySelector('.hero-bg-video');
+        if (!btn || !video) return;
+        var label = btn.querySelector('.hero-sound-label');
+        btn.addEventListener('click', function() {
+            var on = video.muted;
+            video.muted = !on;
+            if (on) { video.volume = 0.6; var pr = video.play(); if (pr && pr.catch) pr.catch(function(){}); }
+            btn.classList.toggle('is-on', on);
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+            btn.setAttribute('aria-label', on ? 'Turn the background video sound off' : 'Turn the background video sound on');
+            label.textContent = on ? 'Sound on' : 'Sound off';
+        });
+    })();
+    </script>
 
     <!-- Hero logos: size each one by area, not height, so wide and tall logos look equally big -->
     <script>

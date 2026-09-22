@@ -4251,3 +4251,30 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 }
 /* Plan step titles: tighter leading on the two-line ones */
 .plan-step-title { line-height: 1.12; letter-spacing: -0.01em; }
+
+/* Hero sound toggle, under the tagline */
+.hero-sound {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: var(--space-md);
+    padding: 0.4rem 0.9rem 0.4rem 0.7rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+.hero-sound:hover,
+.hero-sound:focus-visible { border-color: var(--color-red-light); color: #fff; }
+.hero-sound .hero-sound-icon--on { display: none; }
+.hero-sound.is-on .hero-sound-icon--on { display: block; }
+.hero-sound.is-on .hero-sound-icon--off { display: none; }
+.hero-sound.is-on { border-color: var(--color-red-light); color: #fff; }
