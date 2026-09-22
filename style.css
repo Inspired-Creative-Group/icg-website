@@ -4145,4 +4145,4 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     font-weight: 400;
     color: var(--color-white);
 }
-.service-outcomes .outcome-label::after { content: ' -\00a0'; color: var(--color-red); }
+.service-outcomes .outcome-label::after { content: ':\00a0'; color: var(--color-red); }
