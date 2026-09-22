@@ -4242,3 +4242,12 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (prefers-reduced-motion: reduce) {
     .ai-layer:hover { transform: none; }
 }
+
+/* Plan cards: red glow under the card on hover, with the red outline */
+.plan-step { transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.45s ease, background 0.35s ease; }
+.plan-step:hover {
+    box-shadow: 0 0 0 1px rgba(232, 0, 13, 0.35), 0 16px 44px -10px rgba(232, 0, 13, 0.5);
+    background: linear-gradient(180deg, rgba(232, 0, 13, 0.07) 0%, rgba(232, 0, 13, 0.02) 100%), var(--color-surface);
+}
+/* Plan step titles: tighter leading on the two-line ones */
+.plan-step-title { line-height: 1.12; letter-spacing: -0.01em; }
