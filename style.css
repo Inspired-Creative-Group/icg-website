@@ -4175,3 +4175,45 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 /* Footer links stack one per line, so nothing wraps into stray dividers */
 .footer-links a { display: flex; min-height: 36px; }
 .footer-links a + a::before { content: none; }
+
+/* About submenu: Testimonials, The Plan, FAQ */
+.nav-item--sub { position: relative; display: flex; align-items: center; }
+.nav-sub {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    min-width: 11rem;
+    padding: 0.6rem 0;
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+.nav-item--sub:hover .nav-sub,
+.nav-item--sub:focus-within .nav-sub { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-sub-link { padding: 0.45rem 1rem; font-size: 0.78rem; }
+.nav-sub-link::after { display: none !important; }
+@media (max-width: 768px) {
+    .nav-item--sub { flex-direction: column; align-items: center; gap: var(--space-sm); }
+    .nav-sub {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: none;
+        border: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 0;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+    .nav-sub-link { font-size: 0.95rem; opacity: 0.75; }
+}

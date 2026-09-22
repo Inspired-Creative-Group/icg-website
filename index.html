@@ -185,8 +185,20 @@
                 <img src="assets/logo.png" alt="Inspired Creative Group Inc." />
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
+                <div class="nav-item nav-item--sub">
+                    <a href="#about" class="nav-link">About</a>
+                    <div class="nav-sub">
+                        <a href="#testimonials" class="nav-link nav-sub-link">Testimonials</a>
+                        <a href="#plan" class="nav-link nav-sub-link">The Plan</a>
+                        <a href="#faq" class="nav-link nav-sub-link">FAQ</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item--sub">
+                    <a href="#services" class="nav-link">Services</a>
+                    <div class="nav-sub">
+                        <a href="#system" class="nav-link nav-sub-link">Our Production Workflow</a>
+                    </div>
+                </div>
                 <a href="#work" class="nav-link">Our Work</a>
                 <a href="#contact" class="btn btn-primary nav-cta-btn">Schedule a Discovery Call</a>
             </div>
@@ -375,6 +387,7 @@
         <img class="section-bg" src="assets/backgrounds/system-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.16">
         <div class="container">
             <div class="ai-system gsap-animate">
+                <span class="section-label">Workflow</span>
                 <h3 class="ai-section-title">Our Production Workflow.<br> <span class="text-accent">One Integrated System.<br> From Strategy to Final Delivery.</span></h3>
                 <p class="ai-system-intro">Every project runs through our production system: specialized AI agents organized across five layers. But agents don't make creative decisions. <span class="text-accent" style="white-space:nowrap;">Our Directors do.</span></p>
                 
@@ -521,7 +534,7 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- TESTIMONIALS                             -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="section testimonials" aria-roledescription="carousel" aria-label="Client testimonials">
+    <section class="section testimonials" id="testimonials" aria-roledescription="carousel" aria-label="Client testimonials">
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">Testimonials</span>
