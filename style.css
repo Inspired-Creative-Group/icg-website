@@ -4296,3 +4296,6 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 
 /* Workflow block sat a full section's worth of space below the section's own padding */
 .ai-system { margin-top: 0; margin-bottom: var(--space-2xl); }
+
+/* Keep the testimonial carousel above its new background image */
+.testimonials > .container { position: relative; z-index: 1; }
