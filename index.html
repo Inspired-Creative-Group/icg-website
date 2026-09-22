@@ -616,6 +616,7 @@
                     <a href="projects/more-boxing-day-ai.html" class="work-card work-card--large gsap-animate" data-categories="ai audio video">
                         <div class="work-card-image">
                             <img src="assets/portfolio/ai-more.jpg" alt="MORE: a city buried under waste" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/ai-more.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/more.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -628,6 +629,7 @@
                     <a href="projects/doublemint.html" class="work-card work-card--large gsap-animate" data-categories="audio">
                         <div class="work-card-image">
                             <img src="assets/portfolio/11-doublemint.jpg" alt="Doublemint: Commercial" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/11-doublemint.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/doublemint.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -640,6 +642,7 @@
                     <a href="projects/nalu-retreat.html" class="work-card work-card--large gsap-animate" data-categories="design video branding social">
                         <div class="work-card-image">
                             <img src="assets/portfolio/13-nalu-retreat.jpg" alt="Nalu Retreat and Nordic Spa" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/13-nalu-retreat.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/nalu-retreat.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -652,6 +655,7 @@
                     <a href="projects/nutrabolics.html" class="work-card work-card--large gsap-animate" data-categories="video audio">
                         <div class="work-card-image">
                             <img src="assets/portfolio/01-nutrabolics.jpg" alt="Nutrabolics: SuperNova Commercial" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/01-nutrabolics.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/nutrabolics.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -676,6 +680,7 @@
                     <a href="projects/warner-bros.html" class="work-card work-card--large gsap-animate" data-categories="audio">
                         <div class="work-card-image">
                             <img src="assets/portfolio/02-warner-bros.jpg" alt="Warner Brothers: Scooby Doo & Looney Tunes Game" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/02-warner-bros.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/warner-bros.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -700,6 +705,7 @@
                     <a href="projects/yousician.html" class="work-card work-card--large work-card--hidden-extra gsap-animate" data-categories="design video">
                         <div class="work-card-image">
                             <img src="assets/portfolio/15-yousician.jpg" alt="Yousician For Schools" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/15-yousician.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/yousician.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -712,6 +718,7 @@
                     <a href="projects/short-film.html" class="work-card work-card--large work-card--hidden-extra gsap-animate" data-categories="audio">
                         <div class="work-card-image">
                             <img src="assets/portfolio/08-short-film.jpg" alt="Short Film" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/08-short-film.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/short-film.mp4" type="video/mp4"></video>
                             <div class="work-card-overlay">
                             </div>
                         </div>
@@ -1176,6 +1183,28 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/Flip.min.js"></script>
     <script src="gsap-animations.js"></script>
+
+    <!-- Featured project cards: play a short silent clip while the pointer is over the card -->
+    <script>
+    (function() {
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.querySelectorAll('.work-card-clip').forEach(function(video) {
+            var card = video.closest('.work-card');
+            if (!card) return;
+            card.addEventListener('mouseenter', function() {
+                var p = video.play();
+                if (p && p.catch) p.catch(function() {});
+                card.classList.add('is-playing');
+            });
+            card.addEventListener('mouseleave', function() {
+                video.pause();
+                video.currentTime = 0;
+                card.classList.remove('is-playing');
+            });
+        });
+    })();
+    </script>
 
     <!-- Hero sound toggle -->
     <script>

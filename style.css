@@ -4278,3 +4278,18 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 .hero-sound.is-on .hero-sound-icon--on { display: block; }
 .hero-sound.is-on .hero-sound-icon--off { display: none; }
 .hero-sound.is-on { border-color: var(--color-red-light); color: #fff; }
+
+/* Featured project cards: a silent clip fades in over the still while hovering */
+.work-card-image { position: relative; overflow: hidden; }
+.work-card-clip {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+.work-card.is-playing .work-card-clip { opacity: 1; }
