@@ -4299,3 +4299,23 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 
 /* Keep the testimonial carousel above its new background image */
 .testimonials > .container { position: relative; z-index: 1; }
+
+/* Plan background: a very slow drift and projector-like flicker, so the still breathes */
+.section-bg--alive {
+    transform: scale(1.06);
+    will-change: transform, filter;
+    animation: bgDrift 46s ease-in-out infinite alternate, bgFlicker 7s ease-in-out infinite;
+}
+@keyframes bgDrift {
+    from { transform: scale(1.06) translate3d(0, 0, 0); }
+    to   { transform: scale(1.11) translate3d(-1.4%, -0.9%, 0); }
+}
+@keyframes bgFlicker {
+    0%, 100% { filter: brightness(1); }
+    38%      { filter: brightness(1.07); }
+    61%      { filter: brightness(0.95); }
+    79%      { filter: brightness(1.03); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .section-bg--alive { animation: none; transform: scale(1.06); }
+}
