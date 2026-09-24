@@ -4572,14 +4572,14 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 .statement-row { display: block; }
 .statement.is-in .statement-row,
 .statement .statement-row { will-change: transform, opacity; }
-.statement:not(.is-in) .statement-row { opacity: 0; transform: translateY(0.5em); }
+.statement:not(.is-in) .statement-row { opacity: 0; transform: translateY(0.7em); }
 .statement.is-in .statement-row {
     opacity: 0;
-    transform: translateY(0.5em);
-    animation: statementRise 0.9s var(--ease-out) forwards;
+    transform: translateY(0.7em);
+    animation: statementRise 1.7s var(--ease-out) forwards;
 }
-.statement.is-in .statement-row:nth-child(2) { animation-delay: 0.22s; }
-.statement.is-in .statement-row:nth-child(3) { animation-delay: 0.44s; }
+.statement.is-in .statement-row:nth-child(2) { animation-delay: 0.55s; }
+.statement.is-in .statement-row:nth-child(3) { animation-delay: 1.1s; }
 @keyframes statementRise {
     to { opacity: 1; transform: translateY(0); }
 }
