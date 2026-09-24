@@ -4381,12 +4381,15 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 .tool-logo-item img {
     height: 30px;
     width: auto;
-    opacity: 0.75;
+    /* every mark reads as one grey family, whatever colours it ships with */
+    filter: grayscale(100%) brightness(1.7) contrast(0.85);
+    opacity: 0.6;
     transition: opacity 0.3s ease, filter 0.3s ease;
 }
-/* Flat single-colour marks render white; full-colour logos keep their own colours */
-.tool-logo-item--mono img { filter: brightness(0) invert(1); opacity: 0.65; }
-.tool-logo-item--mono:hover img { opacity: 1; }
+.tool-logo-item:hover img { opacity: 0.95; }
+/* Marks that arrive as flat black have to be flipped to light grey first */
+.tool-logo-item--mono img { filter: brightness(0) invert(1) grayscale(100%) brightness(0.82); opacity: 0.6; }
+.tool-logo-item--mono:hover img { opacity: 0.95; }
 .tool-wordmark {
     font-family: var(--font-heading);
     font-size: 1rem;
