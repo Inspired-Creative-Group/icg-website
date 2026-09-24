@@ -4431,3 +4431,39 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 
 .statement, .statement * { text-align: center !important; }
 .statement-line { margin-left: auto !important; margin-right: auto !important; }
+
+/* Depth behind the statement: a blurred plate, a warm centre glow and a vignette */
+.statement-bg {
+    position: absolute;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    filter: grayscale(100%) blur(34px) brightness(0.5) contrast(1.1);
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+    transform: scale(1.05);
+}
+.statement::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(1100px, 90%);
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, rgba(232, 0, 13, 0.16) 0%, rgba(232, 0, 13, 0.05) 35%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+.statement::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, rgba(0, 0, 0, 0.75) 100%),
+        linear-gradient(180deg, var(--color-black) 0%, transparent 18%, transparent 82%, var(--color-black) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
