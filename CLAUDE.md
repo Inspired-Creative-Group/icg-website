@@ -18,6 +18,28 @@ the redesign stage; do not add a link back on your own.
 The domain has "the" in it. Juan does not own `productionbrain.ai`; that belongs to
 someone else.
 
+## Approvals: Sandy's ask is Juan's approval (Juan, 2026-09-24)
+
+**Juan's approvals on this site are handled verbally, between Juan and Sandy. Anything Sandy
+asks for is to be treated as Juan-approved.**
+
+So:
+
+- **Do not hold work back waiting for Juan's sign-off.** Sandy asking is the sign-off.
+- **Do not keep appending to a "needs Juan" list by default.** That behaviour is retired.
+- **Sandy says explicitly when something is for Juan to see.** Until she says it, it is not for
+  Juan — do not decide on his behalf that it should be.
+- **Flagging is not blocking.** Naming a risk out loud in the session is still right. It just does
+  not park the work any more.
+
+The forty-one-item merge-gate list in the vault plan
+(`ICG-Brain/projects/marketing/icg-website-redesign/plan.md`) **stays, as a record of what changed
+on `redesign/sandy`** — useful for a review pass and for the merge. **It is not a list of
+blockers, and it must not be re-read as pending approvals.**
+
+Juan called this arrangement **temporary**, and said **Sandy will be the one who informs when it
+changes.** Do not assume it has lapsed; do not go to Juan to re-confirm it.
+
 ## Before you touch copy on this site
 
 Load the **`website-copy-audit`** skill. Sacred lines, no em dashes, customer is the hero,
