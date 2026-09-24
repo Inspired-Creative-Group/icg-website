@@ -1481,3 +1481,56 @@ ul { list-style: none; }
 .nav-logo img { height: 52px; }
 @media (max-width: 768px) { .nav-logo img { height: 44px; } }
 .nav-inner { max-width: calc(var(--max-width) + 2 * var(--space-lg)); }
+
+/* "How this video was made": a short process explainer on project pages */
+.how-made { padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border); }
+.how-made-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-red);
+    margin-bottom: var(--space-md);
+}
+.how-made-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-gray-300);
+    max-width: 62ch;
+    margin-bottom: var(--space-xl);
+}
+.how-made-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    counter-reset: how;
+}
+.how-made-steps li {
+    counter-increment: how;
+    border-top: 2px solid var(--color-red);
+    padding-top: var(--space-sm);
+}
+.how-made-steps li::before {
+    content: "0" counter(how);
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: var(--color-red);
+    margin-bottom: 0.35rem;
+}
+.how-made-steps strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-white);
+    margin-bottom: 0.3rem;
+}
+.how-made-steps span { font-size: 0.85rem; line-height: 1.6; color: var(--color-gray-400); }
+.how-made-note { font-size: 0.95rem; color: var(--color-gray-500); font-style: italic; }
+@media (max-width: 900px) { .how-made-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .how-made-steps { grid-template-columns: 1fr; } }
