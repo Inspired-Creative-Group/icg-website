@@ -4319,3 +4319,9 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (prefers-reduced-motion: reduce) {
     .section-bg--alive { animation: none; transform: scale(1.06); }
 }
+
+/* Reality section: five cards instead of three, three across then two */
+.stakes-cards--five { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 980px) { .stakes-cards--five { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .stakes-cards--five { grid-template-columns: 1fr; } }
+.stakes-cards--five .stakes-card-title { margin-bottom: 0.6rem; }
