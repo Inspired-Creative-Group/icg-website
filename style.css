@@ -4474,10 +4474,23 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 /* ICG icon above the statement, in red, a little larger than the quote mark it replaced */
 .statement-mark-logo {
     display: block;
-    width: clamp(64px, 7vw, 92px);
+    width: clamp(24px, 2.6vw, 35px);
     height: auto;
     margin: 0 auto var(--space-lg);
     /* the source mark is red on white: drop the white, keep the red */
     mix-blend-mode: screen;
     opacity: 0.95;
+}
+/* The ICG icon breathes: a slow pulse out and back */
+.statement-mark-logo {
+    animation: markPulse 3.6s ease-in-out infinite;
+    transform-origin: center;
+    will-change: transform;
+}
+@keyframes markPulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    45%      { transform: scale(1.22); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .statement-mark-logo { animation: none; }
 }
