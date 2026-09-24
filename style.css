@@ -4521,3 +4521,11 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     border-color: var(--color-red);
     color: var(--color-white);
 }
+/* Bigger ICG logo in the footer (source is 112px tall, so it stays sharp) */
+.footer-logo { height: 52px; margin-bottom: var(--space-md); }
+@media (max-width: 768px) { .footer-logo { height: 44px; } }
+/* Footer links turn red on hover */
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    color: var(--color-red-light);
+}
