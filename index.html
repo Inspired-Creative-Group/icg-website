@@ -49,7 +49,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <!-- Structured Data: Organization -->
@@ -61,7 +61,7 @@
         "alternateName": "ICG",
         "url": "https://inspiredcreativegroupinc.com",
         "logo": "https://inspiredcreativegroupinc.com/assets/logo.png",
-        "description": "Production company combining 20+ years of experience with 40+ AI agents for design, video, audio production and AI-powered content creation.",
+        "description": "Production company combining 20+ years of experience with AI agents for design, video, audio production and AI-powered content creation.",
         "foundingDate": "2008",
         "founders": [
             {"@type": "Person", "name": "Juan Carlos Valencia", "jobTitle": "Director & Co-Founder"},
@@ -94,7 +94,7 @@
         "url": "https://inspiredcreativegroupinc.com",
         "logo": "https://inspiredcreativegroupinc.com/assets/logo.png",
         "image": "https://inspiredcreativegroupinc.com/assets/og-image.jpg",
-        "description": "Award-winning production company specializing in design, video, audio, and AI-powered content creation. 20+ years of experience, now powered by 40+ AI agents.",
+        "description": "Award-winning production company specializing in design, video, audio, and AI-powered content creation. 20+ years of experience, now powered by AI agents.",
         "address": [
             {
                 "@type": "PostalAddress",
@@ -185,9 +185,23 @@
                 <img src="assets/logo.png" alt="Inspired Creative Group Inc." />
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#hero" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
+                <div class="nav-item nav-item--sub">
+                    <a href="#services" class="nav-link">Services</a>
+                    <div class="nav-sub">
+                        <a href="#stakes" class="nav-link nav-sub-link">The Reality</a>
+                        <a href="#value" class="nav-link nav-sub-link">Working With Us</a>
+                        <a href="#system" class="nav-link nav-sub-link">Workflow</a>
+                    </div>
+                </div>
+                <a href="#work" class="nav-link">Our Work</a>
+                <div class="nav-item nav-item--sub">
+                    <a href="#about" class="nav-link">About</a>
+                    <div class="nav-sub">
+                        <a href="#testimonials" class="nav-link nav-sub-link">Testimonials</a>
+                        <a href="#plan" class="nav-link nav-sub-link">The Plan</a>
+                        <a href="#faq" class="nav-link nav-sub-link">FAQ</a>
+                    </div>
+                </div>
                 <a href="#contact" class="btn btn-primary nav-cta-btn">Schedule a Discovery Call</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -203,6 +217,10 @@
     <!-- ═══════════════════════════════════════ -->
     <main id="main-content">
     <section class="hero" id="hero">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-bg-poster.jpg" aria-hidden="true">
+            <source src="assets/video/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-bg-shade" aria-hidden="true"></div>
         <div class="hero-bg-grid"></div>
         <div class="hero-content" id="home">
             <div class="hero-badge gsap-animate" style="display:none;">
@@ -215,8 +233,21 @@
                 AI-Produced. <span class="text-accent" style="white-space:nowrap;">Human-Directed.</span>
             </h1>
             <p class="hero-subtitle gsap-animate">
-                Your story, produced by 20+ years of experience and 40+ AI agents. <span style="white-space:nowrap;">No shortcuts, no AI slop.</span>
+                Your Story. 20+ Years of Experience. Produced at AI Speed.
             </p>
+            <button class="hero-sound gsap-animate" id="heroSound" type="button" aria-pressed="false" aria-label="Turn the background video sound on">
+                <svg class="hero-sound-icon hero-sound-icon--off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+                    <line x1="17" y1="9" x2="22" y2="15"/>
+                    <line x1="22" y1="9" x2="17" y2="15"/>
+                </svg>
+                <svg class="hero-sound-icon hero-sound-icon--on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+                    <path d="M16.5 8.5a5 5 0 0 1 0 7"/>
+                    <path d="M19.5 6a8.5 8.5 0 0 1 0 12"/>
+                </svg>
+                <span class="hero-sound-label">Sound off</span>
+            </button>
             <div class="hero-video gsap-animate">
                 <div class="hero-video-wrapper" id="heroVideo">
                     <img src="assets/hero-video-thumb.jpg" alt="Watch: Get Inspired: Your Story, Amplified" class="hero-video-thumb" />
@@ -226,23 +257,40 @@
                     <span class="hero-video-label">What We Are About</span>
                 </div>
             </div>
-            <div class="hero-cta gsap-animate">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
-            </div>
-            <div class="hero-stats gsap-animate">
-                <div class="hero-stat">
-                    <span class="hero-stat-number">20+</span>
-                    <span class="hero-stat-label">Years Experience</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">40+</span>
-                    <span class="hero-stat-label">AI Agents</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">3</span>
-                    <span class="hero-stat-label">Creative Disciplines</span>
+        </div>
+        <!-- Client Logos -->
+        <div class="hero-clients">
+            <h2 class="hero-clients-title">20+ years directing content for brands that <span class="text-accent">demand excellence.</span></h2>
+            <div class="logo-carousel">
+                <div class="logo-carousel-track">
+                    <!-- First set -->
+                    <div class="client-logo-item"><img src="assets/logos/discovery.svg" alt="Discovery" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/hgtv.svg" alt="HGTV" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/national-geographic.svg" alt="National Geographic" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/prime-video.svg" alt="Prime Video" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/yousician.svg" alt="Yousician" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/warner-bros.svg" alt="Warner Bros." /></div>
+                    <div class="client-logo-item"><img src="assets/logos/rogers.svg" alt="Rogers" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/sony.svg" alt="Sony" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/mattel.svg" alt="Mattel" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/hallmark.svg" alt="Hallmark" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/cartoon-network.svg" alt="Cartoon Network" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/chrysler.svg" alt="Chrysler" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/amazon.svg" alt="Amazon" /></div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="client-logo-item"><img src="assets/logos/discovery.svg" alt="Discovery" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/hgtv.svg" alt="HGTV" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/national-geographic.svg" alt="National Geographic" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/prime-video.svg" alt="Prime Video" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/yousician.svg" alt="Yousician" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/warner-bros.svg" alt="Warner Bros." /></div>
+                    <div class="client-logo-item"><img src="assets/logos/rogers.svg" alt="Rogers" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/sony.svg" alt="Sony" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/mattel.svg" alt="Mattel" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/hallmark.svg" alt="Hallmark" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/cartoon-network.svg" alt="Cartoon Network" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/chrysler.svg" alt="Chrysler" /></div>
+                    <div class="client-logo-item"><img src="assets/logos/amazon.svg" alt="Amazon" /></div>
                 </div>
             </div>
         </div>
@@ -253,6 +301,8 @@
     </section>
 
     <!-- ═══════════════════════════════════════ -->
+    <!-- VALUE PROPOSITION (3 Customer Outcomes)  -->
+    <!-- ═══════════════════════════════════════ -->
     <!-- STAKES (Cost of Inaction)                -->
     <!-- ═══════════════════════════════════════ -->
     <section class="section stakes-section" id="stakes">
@@ -262,50 +312,60 @@
                 <span class="section-label">The Reality</span>
                 <h2 class="section-title">The Market <span class="text-accent">Isn't Waiting.</span></h2>
                 <p class="section-subtitle">AI has changed the economics of content production. Brands that move first are producing more and connecting deeper, with leaner teams. The ones still operating the old way? They're losing ground every month.</p>
+                <h2 class="section-title stakes-yes">Now You Can <span class="text-accent">Say Yes.</span></h2>
             </div>
 
-            <div class="stakes-cards">
+            <div class="stakes-cards stakes-cards--five">
                 <div class="stakes-card gsap-animate">
                     <div class="stakes-card-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 32L16 18L22 24L32 8"/>
-                            <path d="M26 8H32V14"/>
-                            <path d="M8 32H32" stroke="rgba(255,255,255,0.15)"/>
+                            <path d="M6 14h28v18H6z"/><path d="M6 14l14 11 14-11"/><path d="M20 4v7"/><path d="M16 8l4 4 4-4"/>
                         </svg>
                     </div>
-                    <h3 class="stakes-card-title">The Volume Gap</h3>
-                    <p>Leading brands are producing full campaigns without growing their teams. Every month you wait, the gap widens.</p>
+                    <h3 class="stakes-card-title">The ask has landed</h3>
+                    <p>Your clients expect you to lead on AI. There's no time to go learn it.</p>
                 </div>
                 <div class="stakes-card gsap-animate">
                     <div class="stakes-card-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="20" cy="20" r="14"/>
-                            <path d="M20 12V20L26 26"/>
-                            <path d="M14 6L20 2L26 6" stroke="rgba(255,255,255,0.15)"/>
+                            <rect x="6" y="9" width="28" height="25" rx="2"/><path d="M6 16h28"/><path d="M13 5v7M27 5v7"/><path d="M12 22h4M18 22h4M24 22h4M12 28h4M18 28h4"/>
                         </svg>
                     </div>
-                    <h3 class="stakes-card-title">The Quality Trap</h3>
-                    <p>Generic AI content floods every platform. Without expert direction, AI makes you blend in, not stand out.</p>
+                    <h3 class="stakes-card-title">Your week is already full</h3>
+                    <p>We know what your week looks like. The urgent work always wins.</p>
                 </div>
                 <div class="stakes-card gsap-animate">
                     <div class="stakes-card-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="6" y="16" width="8" height="18" rx="1"/>
-                            <rect x="16" y="10" width="8" height="24" rx="1"/>
-                            <rect x="26" y="6" width="8" height="28" rx="1"/>
-                            <path d="M4 38H36" stroke="rgba(255,255,255,0.15)"/>
-                            <path d="M10 16L20 10L30 6" stroke-dasharray="3 3" stroke="rgba(255,255,255,0.2)"/>
+                            <rect x="5" y="15" width="24" height="17" rx="1.5"/><path d="M5 15l3-6h24l-3 6H5z"/><path d="M14 9l-3 6M22 9l-3 6"/><path d="M31 23h5m-3-2l2 2-2 2" stroke="rgba(255,255,255,0.4)"/>
                         </svg>
                     </div>
-                    <h3 class="stakes-card-title">The Scale Ceiling</h3>
-                    <p>You need 10x the content but can't 10x the budget or team. Something has to give. And it shouldn't be quality.</p>
+                    <h3 class="stakes-card-title">We produce,<br> you deliver</h3>
+                    <p>You keep the client. We produce the work, directed by twenty years in production.</p>
+                </div>
+                <div class="stakes-card gsap-animate">
+                    <div class="stakes-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="20" cy="20" r="14"/><path d="M13 20.5l5 5 9-11"/>
+                        </svg>
+                    </div>
+                    <h3 class="stakes-card-title">Say yes with confidence</h3>
+                    <p>You confidently say yes to the job you'd have passed on.</p>
+                </div>
+                <div class="stakes-card gsap-animate">
+                    <div class="stakes-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 26c4-8 8-12 10-12s1 6 3 6 3-3 6-3"/><path d="M8 32h24" stroke="rgba(255,255,255,0.3)"/><path d="M27 17l6-6 2 2-6 6-3 1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="stakes-card-title">Work in your name</h3>
+                    <p>Work that looks like a crew of fifty made it, in your name.</p>
                 </div>
             </div>
 
         </div>
     </section>
-    <!-- ═══════════════════════════════════════ -->
-    <!-- VALUE PROPOSITION (3 Customer Outcomes)  -->
+
     <!-- ═══════════════════════════════════════ -->
     <section class="section value-prop" id="value">
         <img class="section-bg" src="assets/backgrounds/valueprop-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.15">
@@ -316,49 +376,129 @@
             </div>
             <div class="value-prop-grid">
                 <div class="value-prop-card gsap-animate">
-                    <div class="value-prop-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="23" stroke-width="1"/>
-                            <rect x="13" y="15" width="16" height="12" rx="2"/>
-                            <path d="M29 19L35 15.5V28.5L29 25"/>
-                            <path d="M16 33C16 33 20 30 24 33C28 30 32 33 32 33"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-prop-title">Looks Like a Crew of 50 Made It</h3>
-                    <p class="value-prop-desc">AI-powered, human-directed. Content crafted with 20+ years of broadcast and digital production experience. No shortcuts, no AI slop.</p>
+                    <div class="value-prop-media"><video class="value-prop-clip" autoplay muted loop playsinline preload="metadata" poster="assets/video/card-speed.jpg" aria-hidden="true"><source src="assets/video/card-speed.mp4" type="video/mp4"></video></div>
+                    <span class="value-prop-num">01</span>
+                    <h3 class="value-prop-title">Streamlined by Design. Strong in Execution.</h3>
+                    <p class="value-prop-desc">AI-powered, human-directed. Content crafted with 20+ years of production experience. No shortcuts, no AI slop.</p>
                 </div>
                 <div class="value-prop-card gsap-animate">
-                    <div class="value-prop-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="23" stroke-width="1"/>
-                            <circle cx="18" cy="20" r="4"/>
-                            <circle cx="30" cy="20" r="4"/>
-                            <path d="M10 36C10 30 14 26 18 26C20 26 22 27 24 28C26 27 28 26 30 26C34 26 38 30 38 36"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-prop-title">Scale Without Hiring</h3>
-                    <p class="value-prop-desc">Video, sound design, music, and design. All from one production team. Scale your output without scaling your headcount or your overhead.</p>
+                    <div class="value-prop-media"><video class="value-prop-clip" autoplay muted loop playsinline preload="metadata" poster="assets/video/card-whitelabel.jpg" aria-hidden="true"><source src="assets/video/card-whitelabel.mp4" type="video/mp4"></video></div>
+                    <span class="value-prop-num">02</span>
+                    <h3 class="value-prop-title">White Label Production</h3>
+                    <p class="value-prop-desc">Increase your creative output with an on-demand production partner that brings the capabilities you need without the permanent overhead.</p>
                 </div>
                 <div class="value-prop-card gsap-animate">
-                    <div class="value-prop-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="23" stroke-width="1"/>
-                            <path d="M16 28L22 22L26 26L32 20"/>
-                            <path d="M28 20H32V24"/>
-                            <path d="M14 34H34" stroke-width="1"/>
-                        </svg>
-                    </div>
+                    <div class="value-prop-media"><video class="value-prop-clip" autoplay muted loop playsinline preload="metadata" poster="assets/video/card-partner.jpg" aria-hidden="true"><source src="assets/video/card-partner.mp4" type="video/mp4"></video></div>
+                    <span class="value-prop-num">03</span>
                     <h3 class="value-prop-title">A Partner, Not a Vendor</h3>
                     <p class="value-prop-desc">We produce for you now. When you're ready, we help your team build <span class="text-accent">AI workflows</span> designed for how you actually work. No other production company offers that.</p>
                 </div>
             </div>
-            <div class="value-prop-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
+        </div>
+    </section>
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SERVICES                                 -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section services" id="services">
+        <img class="section-bg" src="assets/backgrounds/services-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.17">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">Services</span>
+                <h2 class="section-title">Creative <span class="text-accent">Capabilities</span></h2>
+                <p class="section-subtitle">Creative expertise across strategy, design, content, and production.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Inspired Creative -->
+                <div class="service-block gsap-animate" id="services-creative">
+                    <div class="service-header">
+                        <span class="service-number">01</span>
+                        <h3 class="service-title">Inspired <span class="text-accent">Creative</span></h3>
+                    </div>
+                    <p class="service-desc">Cinematic content and brand systems that make you unmistakable.</p>
+                    <button class="service-toggle" aria-expanded="false" aria-controls="service-creative-details">
+                        View Details <span class="service-toggle-icon">+</span>
+                    </button>
+                    <div class="service-details service-collapsible" id="service-creative-details">
+                        <ul class="service-outcomes">
+                            <li><span class="outcome-label">Creative Direction</span>Concept and campaign strategy shaped by decades of work with top tier global brands</li>
+                            <li>Brand strategy, tone, style direction and delivery</li>
+                            <li><span class="outcome-label">AI Production</span>4K scalable video delivery ready for broadcast, socials and B2B</li>
+                            <li>Original music and sound design composed for your project. No stock, no licensing fees</li>
+                            <li>Full post-production in-house: editing, mixing, mastering, color, and sound</li>
+                            <li>Responsive website design, execution and optimization</li>
+                            <li>Social media and series content optimized per platform</li>
+                            <li>Print-ready assets for all print materials</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AI Production Services -->
+                <div class="service-block service-block--ai gsap-animate" id="services-ai">
+                    <div class="service-header">
+                        <span class="service-number">02</span>
+                        <h3 class="service-title">Inspired <span class="text-accent">AI</span> Workflow Consulting</h3>
+                    </div>
+                    <p class="service-desc">When you're ready to bring AI into your own team's workflow, we build custom agent systems designed for how you actually work, not off-the-shelf tools.</p>
+                    <button class="service-toggle" aria-expanded="false" aria-controls="service-ai-details">
+                        View Details <span class="service-toggle-icon">+</span>
+                    </button>
+                    <div class="service-details service-collapsible" id="service-ai-details">
+                        <ul class="service-outcomes">
+                            <li>Workflow audit: we map your team's process and identify where AI agents save real time</li>
+                            <li>Custom agent systems built around your tools, your files, your workflow, not generic templates</li>
+                            <li>Training and handoff: your team learns to run the system, with documentation</li>
+                            <li>Ongoing plans available: hands-on management, optimization, and new systems built as your needs grow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
 
 
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- TOOLS WE DIRECT                          -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section tools-strip" aria-label="Tools we direct">
+        <div class="container">
+            <span class="section-label">Tools We Direct</span>
+            <div class="logo-carousel tool-carousel">
+                <div class="logo-carousel-track">
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/anthropic.svg" alt="Anthropic" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/higgsfield.png" alt="Higgsfield" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/elevenlabs.svg" alt="ElevenLabs" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/openai.svg" alt="OpenAI" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/googlegemini.svg" alt="Gemini" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/adobe.svg" alt="Adobe" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/final-cut-pro.png" alt="Final Cut Pro" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/logic-pro.png" alt="Logic Pro" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/suno.svg" alt="Suno" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/universal-audio.png" alt="Universal Audio" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/byteplus.svg" alt="BytePlus" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/grok.png" alt="Grok" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/fal.png" alt="fal.ai" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/kie.png" alt="kie.ai" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/anthropic.svg" alt="Anthropic" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/higgsfield.png" alt="Higgsfield" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/elevenlabs.svg" alt="ElevenLabs" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/openai.svg" alt="OpenAI" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/googlegemini.svg" alt="Gemini" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/adobe.svg" alt="Adobe" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/final-cut-pro.png" alt="Final Cut Pro" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/logic-pro.png" alt="Logic Pro" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/suno.svg" alt="Suno" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/universal-audio.png" alt="Universal Audio" loading="lazy" /></div>
+                        <div class="tool-logo-item tool-logo-item--mono"><img src="assets/logos-tools/byteplus.svg" alt="BytePlus" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/grok.png" alt="Grok" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/fal.png" alt="fal.ai" loading="lazy" /></div>
+                        <div class="tool-logo-item"><img src="assets/logos-tools/kie.png" alt="kie.ai" loading="lazy" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- THE SYSTEM (Agreement Plan)              -->
@@ -367,8 +507,9 @@
         <img class="section-bg" src="assets/backgrounds/system-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.16">
         <div class="container">
             <div class="ai-system gsap-animate">
-                <h3 class="ai-section-title">How We Solve It:<br> <span class="text-accent">40+ Specialized Agents.</span></h3>
-                <p class="ai-system-intro">Every project runs through our production system: 40+ specialized AI agents organized across five layers, from strategy to final delivery. But agents don't make creative decisions. <span class="text-accent">Our Directors do.</span></p>
+                <span class="section-label">Workflow</span>
+                <h3 class="ai-section-title">Our Production Workflow.<br> <span class="text-accent">One Integrated System.<br> From Strategy to Final Delivery.</span></h3>
+                <p class="ai-system-intro">Every project runs through our production system: specialized AI agents organized across five layers. But agents don't make creative decisions. <span class="text-accent" style="white-space:nowrap;">Our Directors do.</span></p>
                 
                 <div class="ai-layers">
                     <div class="ai-layer ai-layer--expandable gsap-animate">
@@ -458,14 +599,6 @@
                 </div>
             </div>
 
-            <!-- Bottom Line -->
-            <div class="ai-bottom-line gsap-animate">
-                <blockquote class="ai-quote">
-                    <p>Everyone has access to AI tools now. The difference isn't the tools. It's <span class="text-accent">who's directing&nbsp;them.</span></p>
-                </blockquote>
-                <p class="ai-closing">AI can't make you feel something. We can. AI just makes it possible to do more of it.</p>
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call →</a>
-            </div>
 
         </div>
     </section>
@@ -473,23 +606,21 @@
     <!-- ═══════════════════════════════════════ -->
     <!-- THE GUIDE                                -->
     <!-- ═══════════════════════════════════════ -->
+    <!-- STATEMENT                                -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="statement">
+        <img class="statement-bg" src="assets/backgrounds/system-bg.jpg" alt="" loading="lazy" aria-hidden="true">
+        <div class="container">
+            <img class="statement-mark-logo" src="favicon-512x512.png" alt="" aria-hidden="true" width="96" height="96">
+            <p class="statement-line gsap-animate"><span class="statement-row">Human-directed.</span><span class="statement-row">AI-powered.</span><span class="statement-row text-accent">Made to connect.</span></p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
     <section class="section about" id="about">
         <div class="container">
             <div class="section-header gsap-animate">
-                <span class="section-label">The Problem</span>
-                <h2 class="section-title">What's <span class="text-accent">Missing.</span></h2>
-            </div>
-
-            <!-- Empathy First -->
-            <div class="about-story gsap-animate">
-                <div class="about-story-content">
-                    <p class="about-story-text">
-                        We watched brands pour money into AI-generated content that was technically fine and completely forgettable. Audiences scrolled past it. Clients questioned the investment. The tools were there, but the direction wasn't.
-                    </p>
-                    <p class="about-story-text" style="margin-top: 1rem;">
-                        So we built a production system that puts experienced direction back in the centre. In the creative, in the process, and in knowing what <span class="text-accent">"done" actually looks like.</span>
-                    </p>
-                </div>
+                <h2 class="section-title">Founding <span class="text-accent">Partners</span></h2>
             </div>
 
             <!-- Team -->
@@ -511,7 +642,7 @@
                 </div>
                 <div class="team-member team-member--reverse gsap-animate">
                     <div class="team-member-image">
-                        <img src="assets/juan.jpg" alt="Juan Valencia, Production Director" />
+                        <img src="assets/juan-colour.jpg" alt="Juan Valencia, Production Director" />
                     </div>
                     <div class="team-member-info">
                         <span class="team-member-role">Production Director / Co-Founder</span>
@@ -526,540 +657,18 @@
                 </div>
             </div>
 
-            <!-- Client Logos -->
-            <div class="about-clients gsap-animate">
-                <h3 class="about-clients-title">20+ years directing content for brands that <span class="text-accent">demand excellence.</span></h3>
-                <div class="logo-carousel">
-                    <div class="logo-carousel-track">
-                        <!-- First set -->
-                        <div class="client-logo-item"><img src="assets/logos/discovery.svg" alt="Discovery" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/hgtv.svg" alt="HGTV" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/national-geographic.svg" alt="National Geographic" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/prime-video.svg" alt="Prime Video" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/yousician.svg" alt="Yousician" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/warner-bros.svg" alt="Warner Bros." /></div>
-                        <div class="client-logo-item"><img src="assets/logos/rogers.svg" alt="Rogers" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/sony.svg" alt="Sony" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/mattel.svg" alt="Mattel" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/hallmark.svg" alt="Hallmark" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/cartoon-network.svg" alt="Cartoon Network" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/chrysler.svg" alt="Chrysler" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/amazon.svg" alt="Amazon" /></div>
-                        <!-- Duplicate set for seamless loop -->
-                        <div class="client-logo-item"><img src="assets/logos/discovery.svg" alt="Discovery" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/hgtv.svg" alt="HGTV" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/national-geographic.svg" alt="National Geographic" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/prime-video.svg" alt="Prime Video" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/yousician.svg" alt="Yousician" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/warner-bros.svg" alt="Warner Bros." /></div>
-                        <div class="client-logo-item"><img src="assets/logos/rogers.svg" alt="Rogers" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/sony.svg" alt="Sony" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/mattel.svg" alt="Mattel" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/hallmark.svg" alt="Hallmark" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/cartoon-network.svg" alt="Cartoon Network" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/chrysler.svg" alt="Chrysler" /></div>
-                        <div class="client-logo-item"><img src="assets/logos/amazon.svg" alt="Amazon" /></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured In -->
-            <div class="about-featured gsap-animate">
-                <h3 class="about-featured-title">Client Work Featured In</h3>
-                <div class="featured-badges">
-                    <a href="https://www.vogue.com/article/halifax-nova-scotia-travel-guide" target="_blank" rel="noopener" class="featured-badge featured-badge--link">
-                        <span class="featured-badge-name">Vogue</span>
-                        <span class="featured-badge-context">Nalu Retreat Feature</span>
-                    </a>
-                    <a href="https://www.newsweek.com/worlds-most-extraordinary-spas-2026-11100600" target="_blank" rel="noopener" class="featured-badge featured-badge--link">
-                        <span class="featured-badge-name">Newsweek</span>
-                        <span class="featured-badge-context">World's Most Extraordinary Spas 2026</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- CTA -->
             <div class="about-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- THE PLAN                                -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="section plan" id="plan">
-        <img class="section-bg" src="assets/backgrounds/plan-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.18">
-        <div class="container">
-            <div class="section-header gsap-animate">
-                <span class="section-label">The Plan</span>
-                <h2 class="section-title">Getting started is <span class="text-accent">simple.</span></h2>
-            </div>
-            <div class="plan-steps">
-                <div class="plan-step gsap-animate">
-                    <span class="plan-step-num">01</span>
-                    <h3 class="plan-step-title">Schedule a Discovery Call</h3>
-                    <p class="plan-step-desc">Tell us about your project, goals,<br class="mobile-br"> and timeline. We'll listen, ask the<br class="mobile-br"> right questions, and figure out<br class="mobile-br"> how we can help.</p>
-                </div>
-                <div class="plan-step gsap-animate">
-                    <span class="plan-step-num">02</span>
-                    <h3 class="plan-step-title">Get Your Custom<br class="mobile-br"> Production Plan</h3>
-                    <p class="plan-step-desc">A custom strategy combining design, production, and AI tools, with custom workflows scoped to your budget, brand, and audience.</p>
-                </div>
-                <div class="plan-step gsap-animate">
-                    <span class="plan-step-num">03</span>
-                    <h3 class="plan-step-title">Launch Content<br class="mobile-br"> That Connects</h3>
-                    <p class="plan-step-desc">Your brand everywhere. Consistent, unmistakable, and actually moving people. On time, on&nbsp;budget.</p>
-                </div>
-            </div>
-            <div class="plan-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Start With Step 1 →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- SERVICES                                 -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="section services" id="services">
-        <img class="section-bg" src="assets/backgrounds/services-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.17">
-        <div class="container">
-            <div class="section-header gsap-animate">
-                <span class="section-label">Services</span>
-                <h2 class="section-title">Everything Your Brand Needs. <span class="text-accent">One Team.</span></h2>
-                <p class="section-subtitle">Everything your brand needs to connect.<br class="mobile-br"> produced together, not outsourced&nbsp;in&nbsp;pieces.</p>
+                <a href="#contact" class="btn btn-primary nav-cta-btn">Schedule a Discovery Call</a>
             </div>
 
-            <div class="services-grid">
-                <!-- Inspired Creative -->
-                <div class="service-block gsap-animate" id="services-creative">
-                    <div class="service-header">
-                        <span class="service-number">01</span>
-                        <h3 class="service-title">Inspired <span class="text-accent">Creative</span></h3>
-                    </div>
-                    <p class="service-desc">Video, sound, music, and design. All from one production team. Cinematic content and brand systems that make you unmistakable.</p>
-                    <button class="service-toggle" aria-expanded="false" aria-controls="service-creative-details">
-                        View Details <span class="service-toggle-icon">+</span>
-                    </button>
-                    <div class="service-details service-collapsible" id="service-creative-details">
-                        <ul class="service-outcomes">
-                            <li>Up to 3 video concepts delivered as PDF presentations with visual references and storyboard sections. You pick the direction</li>
-                            <li>4K scalable video delivery, color graded, ready for broadcast or social</li>
-                            <li>Original music and sound design composed for your project. No stock, no licensing fees</li>
-                            <li>Full post-production in-house: editing, mixing, mastering, color, and sound</li>
-                            <li>Brand identity system: logo, color palette, typography, and usage guidelines</li>
-                            <li>Responsive website design</li>
-                            <li>Social media templates optimized per platform</li>
-                            <li>Print-ready files for all collateral</li>
-                            <li>Art direction shaped by decades of work with top tier global brands</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- AI Production Services -->
-                <div class="service-block service-block--ai gsap-animate" id="services-ai">
-                    <div class="service-header">
-                        <span class="service-number">02</span>
-                        <h3 class="service-title">Inspired <span class="text-accent">AI</span> Workflow Consulting</h3>
-                    </div>
-                    <p class="service-desc">When you're ready to bring AI into your own team's workflow, we build custom agent systems designed for how you actually work, not off-the-shelf tools.</p>
-                    <button class="service-toggle" aria-expanded="false" aria-controls="service-ai-details">
-                        View Details <span class="service-toggle-icon">+</span>
-                    </button>
-                    <div class="service-details service-collapsible" id="service-ai-details">
-                        <ul class="service-outcomes">
-                            <li>Workflow audit: we map your team's process and identify where AI agents save real time</li>
-                            <li>Custom agent systems built around your tools, your files, your workflow, not generic templates</li>
-                            <li>Training and handoff: your team learns to run the system, with documentation</li>
-                            <li>Ongoing plans available: hands-on management, optimization, and new systems built as your needs grow</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="services-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Let's Discuss Your Project →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- PORTFOLIO / OUR WORK                     -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="section work" id="work">
-        <div class="container">
-            <div class="section-header gsap-animate">
-                <span class="section-label">Our Work</span>
-                <h2 class="section-title">From Global Brands to <span class="text-accent">Local Startups.</span></h2>
-            </div>
-
-            <!-- Category Filter Pills -->
-            <div class="work-filters gsap-animate" role="tablist" aria-label="Filter projects by category">
-                <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All</button>
-                <button class="filter-pill" data-filter="design" role="tab" aria-selected="false">Design</button>
-                <button class="filter-pill" data-filter="video" role="tab" aria-selected="false">Video</button>
-                <button class="filter-pill" data-filter="audio" role="tab" aria-selected="false">Audio</button>
-                <button class="filter-pill" data-filter="branding" role="tab" aria-selected="false">Branding</button>
-            </div>
-
-            <!-- Tier 1: Featured Work (2-up grid) -->
-            <div class="work-tier work-tier-1">
-                <h3 class="work-tier-label gsap-animate">Featured Projects</h3>
-                <div class="work-grid-featured">
-                    <a href="projects/doublemint.html" class="work-card work-card--large gsap-animate" data-categories="audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/11-doublemint.jpg" alt="Doublemint: Commercial" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Music</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Wrigley's / Mars</span>
-                            <h4 class="work-card-title">Doublemint Commercial</h4>
-                            <p class="work-card-desc">Original music and sound design for Doublemint's animated relaunch across Latin America.</p>
-                        </div>
-                    </a>
-                    <a href="projects/nalu-retreat.html" class="work-card work-card--large gsap-animate" data-categories="design video branding social">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/13-nalu-retreat.jpg" alt="Nalu Retreat and Nordic Spa" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Design</span>
-                                    <span class="work-tag">Video</span>
-                                    <span class="work-tag">Branding</span>
-                                    <span class="work-tag">Social Media</span>
-                                    <span class="work-tag">AI</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Nalu Retreat</span>
-                            <h4 class="work-card-title">Nalu Retreat and Nordic Spa</h4>
-                            <p class="work-card-desc">Brand, web, and video for Nova Scotia's favourite destination, featured in Vogue and Newsweek's World's Most Extraordinary Spas 2026.</p>
-                        </div>
-                    </a>
-                    <a href="projects/nutrabolics.html" class="work-card work-card--large gsap-animate" data-categories="video audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/01-nutrabolics.jpg" alt="Nutrabolics: SuperNova Commercial" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Video</span>
-                                    <span class="work-tag">Audio</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Nutrabolics</span>
-                            <h4 class="work-card-title">SuperNova Commercial</h4>
-                            <p class="work-card-desc">Full commercial production: creative direction, filming, editing, sound design, and original music.</p>
-                        </div>
-                    </a>
-                    <a href="projects/happy-baker.html" class="work-card work-card--large gsap-animate" data-categories="design branding">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/05-happy-baker.jpg" alt="The Happy Baker: A Dater's Guide to Emotional Baking" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Design</span>
-                                    <span class="work-tag">Branding</span>
-                                    <span class="work-tag">Print</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Erin Bolger / Harlequin</span>
-                            <h4 class="work-card-title">The Happy Baker: A Dater's Guide to Emotional Baking</h4>
-                            <p class="work-card-desc">Branding, cookbook design, photography, and press kit. Gourmand World Cookbook Award, NYT Top 10.</p>
-                        </div>
-                    </a>
-                    <a href="projects/warner-bros.html" class="work-card work-card--large gsap-animate" data-categories="audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/02-warner-bros.jpg" alt="Warner Brothers: Scooby Doo & Looney Tunes Game" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Sound Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Warner Brothers</span>
-                            <h4 class="work-card-title">Scooby Doo & Looney Tunes Cartoon Universe</h4>
-                            <p class="work-card-desc">Design and production for Warner Brothers' licensed video game on Steam. Strict brand standards. Globally recognized IP.</p>
-                        </div>
-                    </a>
-                    <a href="projects/emerald-beach.html" class="work-card work-card--large gsap-animate" data-categories="design branding web print">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/04-emerald-beach.jpg" alt="Emerald Beach Residences" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Design</span>
-                                    <span class="work-tag">Branding</span>
-                                    <span class="work-tag">Web</span>
-                                    <span class="work-tag">Print</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Titan Development</span>
-                            <h4 class="work-card-title">Emerald Beach Residences</h4>
-                            <p class="work-card-desc">Branding and marketing collateral for Panama's Emerald Private Beach Residences: art direction, web, and print.</p>
-                        </div>
-                    </a>
-                    <a href="projects/yousician.html" class="work-card work-card--large work-card--hidden-extra gsap-animate" data-categories="design video">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/15-yousician.jpg" alt="Yousician For Schools" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Program Management</span>
-                                    <span class="work-tag">Education</span>
-                                    <span class="work-tag">Video</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Yousician</span>
-                            <h4 class="work-card-title">Yousician For Schools</h4>
-                            <p class="work-card-desc">Six-month pilot across ten Helsinki schools: instruments, software, and educator workshops for music education.</p>
-                        </div>
-                    </a>
-                    <a href="projects/short-film.html" class="work-card work-card--large work-card--hidden-extra gsap-animate" data-categories="audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/08-short-film.jpg" alt="Short Film" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Sound Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Tungsten Original</span>
-                            <h4 class="work-card-title">You Are Driving Me Crazy: Short Film</h4>
-                            <p class="work-card-desc">Original orchestral score and full sound design for a hallucinogenic psycho-comedy.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-show-all gsap-animate">
-                    <button class="btn btn-ghost work-show-all-btn" id="showAllWork">View More Projects →</button>
-                </div>
-            </div>
-
-            <!-- Tier 2: More Work (3-up grid, merged with Additional Work) -->
-            <div class="work-tier work-tier-2 work-tier--hidden">
-                <h3 class="work-tier-label gsap-animate">More Work</h3>
-                <div class="work-grid-medium">
-                    <a href="projects/rogers-chrysler.html" class="work-card work-card--medium gsap-animate" data-categories="design">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/06-rogers-chrysler.jpg" alt="Rogers/Chrysler: Advertorial Magazines" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Design</span>
-                                    <span class="work-tag">Print</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Rogers · Chrysler · Ontario Tourism Board</span>
-                            <h4 class="work-card-title">Advertorial Magazines</h4>
-                            <p class="work-card-desc">Five advertorial mini-magazines distributed with Money Sense, Chatelaine, Today's Parent, and Maclean's.</p>
-                        </div>
-                    </a>
-                    <a href="projects/sealants.html" class="work-card work-card--medium gsap-animate" data-categories="design branding web social">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/12-sealants.jpg" alt="Tough Skin: Professional Rubber Sealants" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Branding</span>
-                                    <span class="work-tag">Design</span>
-                                    <span class="work-tag">Web</span>
-                                    <span class="work-tag">Social Media</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Confidential (Acquired)</span>
-                            <h4 class="work-card-title">Tough Skin: Launch to Acquisition</h4>
-                            <p class="work-card-desc">Brand creation, collateral, trade shows, photography, and web. Led to Home Depot distribution.</p>
-                        </div>
-                    </a>
-                    <a href="projects/luchador.html" class="work-card work-card--medium gsap-animate" data-categories="audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/luchador-thumbnail.jpg" alt="Luchador: Documentary Series Trailer" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Sound Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Pimiento Productions</span>
-                            <h4 class="work-card-title">Luchador (The Wrestler): Documentary Series Trailer</h4>
-                            <p class="work-card-desc">Music, sound design, and audio post for a documentary series. Canadian wrestler training under lucha libre master Tony Salazar.</p>
-                        </div>
-                    </a>
-                    <a href="projects/guitar-starz.html" class="work-card work-card--medium gsap-animate" data-categories="branding design video">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/10-guitar-starz.jpg" alt="Guitar Starz Club" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Branding</span>
-                                    <span class="work-tag">Design</span>
-                                    <span class="work-tag">Education</span>
-                                    <span class="work-tag">Video</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Guitar Starz</span>
-                            <h4 class="work-card-title">Guitar Starz Club</h4>
-                            <p class="work-card-desc">Brand identity and design for an interactive music education platform.</p>
-                        </div>
-                    </a>
-                    <a href="projects/motorcycle-wars.html" class="work-card work-card--medium gsap-animate" data-categories="video audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/03-motorcycle-wars.jpg" alt="Motorcycle Wars" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Video</span>
-                                    <span class="work-tag">Audio</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Motorcycle Wars</span>
-                            <h4 class="work-card-title">Motorcycle Wars: Promo Video</h4>
-                            <p class="work-card-desc">Original action rock score, sound design, and video post for a superbike elimination series.</p>
-                        </div>
-                    </a>
-                    <a href="projects/btoys.html" class="work-card work-card--medium gsap-animate" data-categories="audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/07-btoys.jpg" alt="B.Toys Commercial" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Post-Production</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Mattel / B.Toys</span>
-                            <h4 class="work-card-title">B.Teepee Commercial</h4>
-                            <p class="work-card-desc">Video and original music for B.Toys product line.</p>
-                        </div>
-                    </a>
-                    <a href="projects/dasit.html" class="work-card work-card--medium gsap-animate" data-categories="audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/09-dasit.jpg" alt="DASIT Corporate Video" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Sound Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">DATSIT</span>
-                            <h4 class="work-card-title">DATSIT Corporate Video</h4>
-                            <p class="work-card-desc">Full video and audio production for a corporate brand film.</p>
-                        </div>
-                    </a>
-                    <a href="projects/showreel.html" class="work-card work-card--medium gsap-animate" data-categories="audio video">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/showreel-thumbnail.jpg" alt="Compilation Showreel" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">Audio</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Video</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Inspired Creative Group</span>
-                            <h4 class="work-card-title">Compilation Showreel</h4>
-                            <p class="work-card-desc">Original music and sound design across 12 projects: Discovery, YTV, Wrigley's, and more.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- AI-Generated Work Samples -->
-            <div class="work-tier work-tier-ai work-tier--hidden gsap-animate">
-                <h3 class="work-tier-label">AI-Generated Work</h3>
-                <p class="work-tier-subtitle">Deep dives into how our AI production system works</p>
-                <div class="work-grid-small">
-                    <a href="projects/nalu-retreat-ai.html" class="work-card work-card--medium gsap-animate" data-categories="ai video">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/ai-nalu.jpg" alt="Nalu Retreat AI Case Study" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">AI</span>
-                                    <span class="work-tag">Case Study</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Nalu Retreat</span>
-                            <h4 class="work-card-title">AI-Produced Promotional Video</h4>
-                            <p class="work-card-desc">31 agents, 5 layers, zero traditional tools.</p>
-                        </div>
-                    </a>
-                    <a href="projects/more-boxing-day-ai.html" class="work-card work-card--medium gsap-animate" data-categories="ai audio">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/ai-more.jpg" alt="MORE Boxing Day Jazz Critique" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">AI</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Video</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">MORE</span>
-                            <h4 class="work-card-title">Boxing Day Jazz Critique</h4>
-                            <p class="work-card-desc">Original song, lyric video, 37 scenes. 4 hours.</p>
-                        </div>
-                    </a>
-                    <a href="projects/eddie77-ai.html" class="work-card work-card--medium gsap-animate" data-categories="ai audio video">
-                        <div class="work-card-image">
-                            <img src="assets/portfolio/ai-eddie77.jpg" alt="Eddie 77 Birthday Tribute" loading="lazy" />
-                            <div class="work-card-overlay">
-                                <div class="work-card-tags">
-                                    <span class="work-tag">AI</span>
-                                    <span class="work-tag">Music</span>
-                                    <span class="work-tag">Video</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-card-info">
-                            <span class="work-card-client">Eddie 77</span>
-                            <h4 class="work-card-title">The Un-Chartered Accountant</h4>
-                            <p class="work-card-desc">Family photos brought to life with AI animation and custom blues-rock.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Portfolio CTA -->
-            <div class="work-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call →</a>
-            </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- TESTIMONIALS                             -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="section testimonials" aria-roledescription="carousel" aria-label="Client testimonials">
+    <section class="section testimonials" id="testimonials" aria-roledescription="carousel" aria-label="Client testimonials">
+        <img class="section-bg" src="assets/backgrounds/partners/partners-deliverables-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.12; filter:brightness(0.9)">
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">Testimonials</span>
@@ -1105,97 +714,294 @@
                 <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Show testimonial 3 of 4" data-index="2"></button>
                 <button class="testimonial-dot" role="tab" aria-selected="false" aria-label="Show testimonial 4 of 4" data-index="3"></button>
             </div>
-            <div class="testimonials-cta gsap-animate-cta">
-                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call →</a>
-            </div>
         </div>
     </section>
 
+
+
     <!-- ═══════════════════════════════════════ -->
-    <!-- LEAD GENERATOR                            -->
+    <!-- PORTFOLIO / OUR WORK                     -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="section homepage-lead-gen" id="toolkit">
+    <section class="section work" id="work">
         <div class="container">
             <div class="section-header gsap-animate">
-                <span class="section-label">Free Toolkit</span>
-                <h2 class="section-title">One Skill From Our Pipeline. <span class="text-accent">Yours Free.</span></h2>
-                <p class="section-subtitle">One skill from our 40+ agent pipeline. See what it does. Then imagine them all working together.</p>
+                <span class="section-label">Our Work</span>
+                <h2 class="section-title">From Global Brands to <span class="text-accent">Local Startups.</span><br> And Everything in Between.</h2>
             </div>
 
-            <div class="lead-gen-flow">
-                <!-- Single row: Before → Skill → After -->
-                <div class="flow-comparison gsap-animate">
-                    <!-- Column 1: Before -->
-                    <div class="flow-col">
-                        <span class="flow-label">Without prompt engineering</span>
-                        <div class="flow-card flow-result flow-result-hover">
-                            <img src="assets/images/lead-magnet/before-food.jpg" alt="Generic AI-generated pasta, flat lighting, no mood" class="flow-image" loading="lazy">
-                        </div>
-                        <div class="flow-prompt-tag">
-                            <code class="flow-code">"a plate of pasta"</code>
-                        </div>
-                    </div>
 
-                    <!-- Column 2: The Skill (center) -->
-                    <div class="flow-col flow-col-center">
-                        <div class="flow-arrow-down">→</div>
-                        <div class="flow-card flow-skill flow-skill-hover">
-                            <span class="flow-card-label">The skill adds</span>
-                            <ul class="flow-skill-list">
-                                <li>CineStill 800T film stock for warm tones</li>
-                                <li>100mm macro lens, shallow depth of field</li>
-                                <li>Candlelight with Rembrandt shadows</li>
-                                <li>Film grain &amp; imperfections to look real</li>
-                                <li>Optimized for Nano Banana Pro (Gemini)</li>
-                            </ul>
+            <!-- Tier 1: Featured Work (2-up grid) -->
+            <div class="work-tier work-tier-1">
+                <h3 class="work-tier-label gsap-animate">Featured Projects</h3>
+                <div class="work-grid-featured">
+                    <a href="projects/more-boxing-day-ai.html" class="work-card work-card--large gsap-animate" data-categories="ai audio video">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/ai-more.jpg" alt="MORE: a city buried under waste" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/ai-more.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/more.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
                         </div>
-                        <div class="flow-arrow-down">→</div>
-                    </div>
-
-                    <!-- Column 3: After -->
-                    <div class="flow-col">
-                        <span class="flow-label flow-label-accent">With the Image Prompt Engineer</span>
-                        <div class="flow-card flow-result flow-result-hover">
-                            <img src="assets/images/lead-magnet/after-food.jpg" alt="Skill-optimized pasta, cinematic lighting, steam, Michelin-star quality" class="flow-image" loading="lazy">
+                        <div class="work-card-info">
+                            <span class="work-card-client">MORE</span>
+                            <h4 class="work-card-title">What Boxing Day Has Become</h4>
+                            <p class="work-card-desc">Song, lyric video, 37 scenes.</p>
                         </div>
-                        <div class="flow-prompt-tag">
-                            <code class="flow-code">"a plate of pasta"</code>
+                    </a>
+                    <a href="projects/doublemint.html" class="work-card work-card--large gsap-animate" data-categories="audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/11-doublemint.jpg" alt="Doublemint: Commercial" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/11-doublemint.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/doublemint.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
                         </div>
-                    </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Wrigley's / Mars</span>
+                            <h4 class="work-card-title">Doublemint Commercial</h4>
+                            <p class="work-card-desc">Original music and sound design for Doublemint's animated relaunch across Latin America.</p>
+                        </div>
+                    </a>
+                    <a href="projects/nalu-retreat.html" class="work-card work-card--large gsap-animate" data-categories="design video branding social">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/13-nalu-retreat.jpg" alt="Nalu Retreat and Nordic Spa" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/13-nalu-retreat.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/nalu-retreat.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Nalu Retreat</span>
+                            <h4 class="work-card-title">Nalu Retreat and Nordic Spa</h4>
+                            <p class="work-card-desc">Brand, web, and video for Nova Scotia's favourite destination, featured in Vogue and Newsweek's World's Most Extraordinary Spas 2026.</p>
+                        </div>
+                    </a>
+                    <a href="projects/nutrabolics.html" class="work-card work-card--large gsap-animate" data-categories="video audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/01-nutrabolics.jpg" alt="Nutrabolics: SuperNova Commercial" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/01-nutrabolics.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/nutrabolics.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Nutrabolics</span>
+                            <h4 class="work-card-title">SuperNova Commercial</h4>
+                            <p class="work-card-desc">Full commercial production: creative direction, filming, editing, sound design, and original music.</p>
+                        </div>
+                    </a>
+                    <a href="projects/happy-baker.html" class="work-card work-card--large gsap-animate" data-categories="design branding">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/05-happy-baker.jpg" alt="The Happy Baker: A Dater's Guide to Emotional Baking" loading="lazy" />
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Erin Bolger / Harlequin</span>
+                            <h4 class="work-card-title">The Happy Baker: A Dater's Guide to Emotional Baking</h4>
+                            <p class="work-card-desc">Branding, cookbook design, photography, and press kit. Gourmand World Cookbook Award, NYT Top 10.</p>
+                        </div>
+                    </a>
+                    <a href="projects/warner-bros.html" class="work-card work-card--large gsap-animate" data-categories="audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/02-warner-bros.jpg" alt="Warner Brothers: Scooby Doo & Looney Tunes Game" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/02-warner-bros.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/warner-bros.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Warner Brothers</span>
+                            <h4 class="work-card-title">Scooby Doo & Looney Tunes Cartoon Universe</h4>
+                            <p class="work-card-desc">Design and production for Warner Brothers' licensed video game on Steam. Strict brand standards. Globally recognized IP.</p>
+                        </div>
+                    </a>
+                    <a href="projects/emerald-beach.html" class="work-card work-card--large gsap-animate" data-categories="design branding web print">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/04-emerald-beach.jpg" alt="Emerald Beach Residences" loading="lazy" />
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Titan Development</span>
+                            <h4 class="work-card-title">Emerald Beach Residences</h4>
+                            <p class="work-card-desc">Branding and marketing collateral for Panama's Emerald Private Beach Residences: art direction, web, and print.</p>
+                        </div>
+                    </a>
+                    <a href="projects/yousician.html" class="work-card work-card--large work-card--hidden-extra gsap-animate" data-categories="design video">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/15-yousician.jpg" alt="Yousician For Schools" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/15-yousician.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/yousician.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Yousician</span>
+                            <h4 class="work-card-title">Yousician For Schools</h4>
+                            <p class="work-card-desc">Six-month pilot across ten Helsinki schools: instruments, software, and educator workshops for music education.</p>
+                        </div>
+                    </a>
+                    <a href="projects/short-film.html" class="work-card work-card--large work-card--hidden-extra gsap-animate" data-categories="audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/08-short-film.jpg" alt="Short Film" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/08-short-film.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/short-film.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Tungsten Original</span>
+                            <h4 class="work-card-title">You Are Driving Me Crazy: Short Film</h4>
+                            <p class="work-card-desc">Original orchestral score and full sound design for a hallucinogenic psycho-comedy.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-show-all gsap-animate">
+                    <button class="btn btn-ghost work-show-all-btn" id="showAllWork">View More Projects →</button>
                 </div>
             </div>
 
-            <div class="lead-gen-cta gsap-animate">
-                <div class="lead-gen-cta-text">
-                    <p class="lead-gen-cta-headline">Get the toolkit free.</p>
-                    <p class="lead-gen-cta-desc">Includes the Image Prompt Engineer skill: film stocks, lighting setups, lens data, anti-AI realism recipes, and a quality scoring system mapped across 6 models. Plus a 14-page companion guide. Works with any LLM.</p>
-                </div>
-                <div class="lead-gen-form-wrap">
-                    <form id="homepage-lead-gen-form" action="https://formspree.io/f/mbdaagjg" method="POST">
-                        <input type="hidden" name="_source" value="homepage-toolkit">
-                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-                        <div class="lead-gen-form-row">
-                            <input type="email" name="email" placeholder="Your work email" required class="lead-gen-input">
-                            <button type="submit" class="btn btn-primary lead-gen-btn">Download Free</button>
+            <!-- Tier 2: More Work (3-up grid, merged with Additional Work) -->
+            <div class="work-tier work-tier-2 work-tier--hidden">
+                <h3 class="work-tier-label gsap-animate">More Work</h3>
+                <div class="work-grid-medium">
+                    <a href="projects/rogers-chrysler.html" class="work-card work-card--medium gsap-animate" data-categories="design">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/06-rogers-chrysler.jpg" alt="Rogers/Chrysler: Advertorial Magazines" loading="lazy" />
+                            <div class="work-card-overlay">
+                            </div>
                         </div>
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADgzGd1p-2PHlr5a" data-theme="dark" data-size="flexible" style="margin:0.75rem 0;"></div>
-                        <p class="lead-gen-privacy">No spam. Unsubscribe anytime.</p>
-                    </form>
-                    <div id="homepage-lead-gen-success" class="lead-gen-success" style="display: none;">
-                        <div class="lead-gen-success-icon">
-                            <svg class="success-checkmark" viewBox="0 0 52 52" width="56" height="56">
-                                <circle class="success-circle" cx="26" cy="26" r="24" fill="none" stroke="#E8000D" stroke-width="2.5"/>
-                                <path class="success-check" fill="none" stroke="#E8000D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M15 27l7 7 15-15"/>
-                            </svg>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Rogers · Chrysler · Ontario Tourism Board</span>
+                            <h4 class="work-card-title">Advertorial Magazines</h4>
+                            <p class="work-card-desc">Five advertorial mini-magazines distributed with Money Sense, Chatelaine, Today's Parent, and Maclean's.</p>
                         </div>
-                        <p class="lead-gen-success-title">Your toolkit is downloading.</p>
-                        <p class="lead-gen-success-desc">The ZIP includes the PDF guide and the full Image Prompt Engineer skill, ready to use.</p>
-                        <p class="lead-gen-success-fallback">Download didn't start? <a href="assets/downloads/ai-image-toolkit-2026.zip" download class="lead-gen-fallback-link">Click here.</a></p>
-                    </div>
+                    </a>
+                    <a href="projects/sealants.html" class="work-card work-card--medium gsap-animate" data-categories="design branding web social">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/12-sealants.jpg" alt="Tough Skin: Professional Rubber Sealants" loading="lazy" />
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Confidential (Acquired)</span>
+                            <h4 class="work-card-title">Tough Skin: Launch to Acquisition</h4>
+                            <p class="work-card-desc">Brand creation, collateral, trade shows, photography, and web. Led to Home Depot distribution.</p>
+                        </div>
+                    </a>
+                    <a href="projects/luchador.html" class="work-card work-card--medium gsap-animate" data-categories="audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/luchador-thumbnail.jpg" alt="Luchador: Documentary Series Trailer" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/luchador-thumbnail.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/luchador.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Pimiento Productions</span>
+                            <h4 class="work-card-title">Luchador (The Wrestler): Documentary Series Trailer</h4>
+                            <p class="work-card-desc">Music, sound design, and audio post for a documentary series. Canadian wrestler training under lucha libre master Tony Salazar.</p>
+                        </div>
+                    </a>
+                    <a href="projects/guitar-starz.html" class="work-card work-card--medium gsap-animate" data-categories="branding design video">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/10-guitar-starz.jpg" alt="Guitar Starz Club" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/10-guitar-starz.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/guitar-starz.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Guitar Starz</span>
+                            <h4 class="work-card-title">Guitar Starz Club</h4>
+                            <p class="work-card-desc">Brand identity and design for an interactive music education platform.</p>
+                        </div>
+                    </a>
+                    <a href="projects/motorcycle-wars.html" class="work-card work-card--medium gsap-animate" data-categories="video audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/03-motorcycle-wars.jpg" alt="Motorcycle Wars" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/03-motorcycle-wars.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/motorcycle-wars.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Motorcycle Wars</span>
+                            <h4 class="work-card-title">Motorcycle Wars: Promo Video</h4>
+                            <p class="work-card-desc">Original action rock score, sound design, and video post for a superbike elimination series.</p>
+                        </div>
+                    </a>
+                    <a href="projects/btoys.html" class="work-card work-card--medium gsap-animate" data-categories="audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/07-btoys.jpg" alt="B.Toys Commercial" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/07-btoys.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/btoys.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Mattel / B.Toys</span>
+                            <h4 class="work-card-title">B.Teepee Commercial</h4>
+                            <p class="work-card-desc">Video and original music for B.Toys product line.</p>
+                        </div>
+                    </a>
+                    <a href="projects/dasit.html" class="work-card work-card--medium gsap-animate" data-categories="audio">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/09-dasit.jpg" alt="DASIT Corporate Video" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/09-dasit.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/dasit.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">DATSIT</span>
+                            <h4 class="work-card-title">DATSIT Corporate Video</h4>
+                            <p class="work-card-desc">Full video and audio production for a corporate brand film.</p>
+                        </div>
+                    </a>
+                    <a href="projects/showreel.html" class="work-card work-card--medium gsap-animate" data-categories="audio video">
+                        <div class="work-card-image">
+                            <img src="assets/portfolio/showreel-thumbnail.jpg" alt="Compilation Showreel" loading="lazy" />
+                            <video class="work-card-clip" muted loop playsinline preload="none" poster="assets/portfolio/showreel-thumbnail.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/cards/showreel.mp4" type="video/mp4"></video>
+                            <div class="work-card-overlay">
+                            </div>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-client">Inspired Creative Group</span>
+                            <h4 class="work-card-title">Compilation Showreel</h4>
+                            <p class="work-card-desc">Original music and sound design across 12 projects: Discovery, YTV, Wrigley's, and more.</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- THE PLAN                                -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section plan" id="plan">
+        <img class="section-bg section-bg--alive" src="assets/backgrounds/plan-bg.jpg" alt="" loading="lazy" aria-hidden="true" style="opacity:0.18">
+        <div class="container">
+            <div class="section-header gsap-animate">
+                <span class="section-label">The Plan</span>
+                <h2 class="section-title">Getting started is <span class="text-accent">simple.</span></h2>
+            </div>
+            <div class="plan-steps">
+                <div class="plan-step gsap-animate">
+                    <span class="plan-step-num">01</span>
+                    <h3 class="plan-step-title">Schedule a Discovery Call</h3>
+                    <p class="plan-step-desc">Tell us about your project, goals,<br class="mobile-br"> and timeline. We'll listen, ask the<br class="mobile-br"> right questions, and figure out<br class="mobile-br"> how we can help.</p>
+                </div>
+                <div class="plan-step gsap-animate">
+                    <span class="plan-step-num">02</span>
+                    <h3 class="plan-step-title">Get Your Custom<br class="mobile-br"> Production Plan</h3>
+                    <p class="plan-step-desc">A custom strategy combining design, production, and AI tools, with custom workflows scoped to your budget, brand, and audience.</p>
+                </div>
+                <div class="plan-step gsap-animate">
+                    <span class="plan-step-num">03</span>
+                    <h3 class="plan-step-title">Launch Content<br class="mobile-br"> That Connects</h3>
+                    <p class="plan-step-desc">Your brand amplified. Consistent, unmistakable, and engaging. On time, on&nbsp;budget.</p>
+                </div>
+            </div>
+            <div class="plan-cta gsap-animate-cta">
+                <a href="#contact" class="btn btn-primary">Start With Step 1 →</a>
             </div>
         </div>
     </section>
+
 
     <!-- ═══════════════════════════════════════ -->
     <!-- FAQ                                       -->
@@ -1204,7 +1010,7 @@
         <div class="container">
             <div class="section-header gsap-animate">
                 <span class="section-label">FAQ</span>
-                <h2 class="section-title">Common <span class="text-accent">Questions</span></h2>
+                <h2 class="section-title">A Few Things <span class="text-accent">Before We Connect</span></h2>
             </div>
             <div class="partners-faq-list">
 
@@ -1224,7 +1030,7 @@
                         <span class="partners-faq-icon">+</span>
                     </button>
                     <div class="partners-faq-answer">
-                        <p>Our 40+ specialized AI agents are organized across five production layers, from research and strategy through content generation, quality assurance, and final delivery. They handle market research, competitor analysis, script drafting, storyboarding, image and video generation, original music composition, sound design, copy, design QA, color grading, format optimization, and multi-platform delivery. But every creative decision (direction, tone, pacing, what's good enough to ship) is made by our human directors.</p>
+                        <p>Our systems are organized across five production layers, from research and strategy through content generation, quality assurance, and final delivery. Specialized AI agents handle market research, competitor analysis, script drafting, storyboarding, image and video generation, original music composition, sound design, copy, design QA, color grading, format optimization, and multi-platform delivery. But every creative decision (direction, tone, pacing, what's good enough to ship) is made by our human directors.</p>
                     </div>
                 </div>
 
@@ -1364,21 +1170,14 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="assets/logo.png" alt="Inspired Creative Group Inc." class="footer-logo" />
-                    <p class="footer-tagline">We direct our team of specialized AI agents to produce content that connects.</p>
+                    <p class="footer-tagline">Human-directed. AI-powered. <span class="text-accent">Made to connect.</span></p>
                 </div>
                 <div class="footer-links">
                     <h4>Navigation</h4>
-                    <a href="#hero">Home</a>
-                    <a href="#stakes">Why ICG</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
-                    <a href="#work">Work</a>
+                    <a href="#work">Our Work</a>
                     <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <a href="#services-creative">Inspired Creative</a>
-                    <a href="#services-ai">Inspired A.I. Innovation</a>
                 </div>
                 <div class="footer-links">
                     <h4>Connect</h4>
@@ -1399,7 +1198,6 @@
 
     </main>
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-    <a href="#contact" class="sticky-contact" id="stickyContact">Schedule a Discovery Call</a>
 
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="script.js"></script>
@@ -1482,109 +1280,116 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/Flip.min.js"></script>
     <script src="gsap-animations.js"></script>
 
-    <!-- Homepage Lead Gen: Lightboxes + Form -->
+    <!-- Featured project cards: play a short silent clip while the pointer is over the card -->
     <script>
-    // Lightbox for skill card
     (function() {
-        var skillCard = document.querySelector('.homepage-lead-gen .flow-skill-hover');
-        if (!skillCard) return;
-        var overlay = document.createElement('div');
-        overlay.className = 'flow-lightbox-skill';
-        var inner = document.createElement('div');
-        inner.className = 'lightbox-skill-card';
-        inner.innerHTML = skillCard.innerHTML;
-        overlay.appendChild(inner);
-        document.body.appendChild(overlay);
-        skillCard.addEventListener('click', function(e) {
-            e.stopPropagation();
-            overlay.style.display = 'flex';
-            requestAnimationFrame(function() { overlay.classList.add('active'); });
-        });
-        function closeSkill() {
-            overlay.classList.remove('active');
-            setTimeout(function() { overlay.style.display = 'none'; }, 350);
-        }
-        overlay.addEventListener('click', closeSkill);
-        inner.addEventListener('click', function(e) { e.stopPropagation(); });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && overlay.classList.contains('active')) closeSkill();
-        });
-    })();
-
-    // Lightbox for before/after images
-    (function() {
-        var overlay = document.createElement('div');
-        overlay.className = 'flow-lightbox';
-        var lbImg = document.createElement('img');
-        overlay.appendChild(lbImg);
-        document.body.appendChild(overlay);
-        document.querySelectorAll('.homepage-lead-gen .flow-result-hover .flow-image').forEach(function(img) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', function(e) {
-                e.stopPropagation();
-                lbImg.src = img.src;
-                lbImg.alt = img.alt;
-                overlay.offsetHeight;
-                overlay.style.display = 'flex';
-                requestAnimationFrame(function() { overlay.classList.add('active'); });
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.querySelectorAll('.work-card-clip').forEach(function(video) {
+            var card = video.closest('.work-card');
+            if (!card) return;
+            card.addEventListener('mouseenter', function() {
+                var p = video.play();
+                if (p && p.catch) p.catch(function() {});
+                card.classList.add('is-playing');
             });
-        });
-        overlay.addEventListener('click', function() {
-            overlay.classList.remove('active');
-            setTimeout(function() { overlay.style.display = 'none'; }, 350);
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && overlay.classList.contains('active')) overlay.click();
-        });
-        overlay.style.display = 'none';
-    })();
-
-    // Lead Gen Form: Formspree AJAX + auto-download + auto-reply
-    (function() {
-        var form = document.getElementById('homepage-lead-gen-form');
-        var success = document.getElementById('homepage-lead-gen-success');
-        if (!form) return;
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var btn = form.querySelector('.lead-gen-btn');
-            var data = new FormData(form);
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-            fetch(form.action, {
-                method: 'POST', body: data, headers: { 'Accept': 'application/json' }
-            }).then(function(r) {
-                if (r.ok) {
-                    form.style.display = 'none';
-                    success.style.display = 'block';
-                    var a = document.createElement('a');
-                    a.href = 'assets/downloads/ai-image-toolkit-2026.zip';
-                    a.download = 'ai-image-toolkit-2026.zip';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    // Branded auto-reply via GAS, gated by a Cloudflare Turnstile
-                    // token verified server-side (locked down 2026-06-08).
-                    var cfToken = data.get('cf-turnstile-response') || '';
-                    var email = data.get('email') || '';
-                    if (cfToken && email) {
-                        var gasBody = new URLSearchParams({ email: email, 'cf-turnstile-response': cfToken });
-                        fetch('https://script.google.com/macros/s/AKfycbyBt62avorESe_eb_nTW6QyCAN3LllspGAsl5bKW6pYltmnfA9GS9f_Y2TdiXWTrSwb/exec', {
-                            method: 'POST', mode: 'no-cors',
-                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                            body: gasBody.toString()
-                        });
-                    }
-                } else {
-                    btn.disabled = false;
-                    btn.textContent = 'Download Free';
-                }
-            }).catch(function() {
-                btn.disabled = false;
-                btn.textContent = 'Download Free';
+            card.addEventListener('mouseleave', function() {
+                video.pause();
+                video.currentTime = 0;
+                card.classList.remove('is-playing');
             });
         });
     })();
     </script>
+
+    <!-- Statement: each line rises as the section comes into view -->
+    <script>
+    (function() {
+        var section = document.querySelector('.statement');
+        if (!section) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { section.classList.add('is-in'); return; }
+        if (!('IntersectionObserver' in window)) { section.classList.add('is-in'); return; }
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) { section.classList.add('is-in'); io.disconnect(); }
+            });
+        }, { threshold: 0.35 });
+        io.observe(section);
+    })();
+    </script>
+
+    <!-- Hero sound toggle -->
+    <script>
+    (function() {
+        var btn = document.getElementById('heroSound');
+        var video = document.querySelector('.hero-bg-video');
+        if (!btn || !video) return;
+        var label = btn.querySelector('.hero-sound-label');
+        btn.addEventListener('click', function() {
+            var on = video.muted;
+            video.muted = !on;
+            if (on) { video.volume = 0.6; var pr = video.play(); if (pr && pr.catch) pr.catch(function(){}); }
+            btn.classList.toggle('is-on', on);
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+            btn.setAttribute('aria-label', on ? 'Turn the background video sound off' : 'Turn the background video sound on');
+            label.textContent = on ? 'Sound on' : 'Sound off';
+        });
+    })();
+    </script>
+
+    <!-- Hero logos: size each one by area, not height, so wide and tall logos look equally big -->
+    <script>
+    (function() {
+        var AREA = 3600, MAX_H = 42, MAX_W = 170;
+        var BOOST = { 'Hallmark': 1.5, 'Chrysler': 1.35 }; /* thin or padded artwork reads small */
+        document.querySelectorAll('.hero-clients .client-logo-item img').forEach(function(img) {
+            function fit() {
+                var r = img.naturalWidth / img.naturalHeight;
+                if (!r || !isFinite(r)) return;
+                var w = Math.sqrt(AREA * (BOOST[img.alt] || 1) * r), h = w / r;
+                if (h > MAX_H) { h = MAX_H; w = h * r; }
+                if (w > MAX_W) { w = MAX_W; h = w / r; }
+                img.style.width = Math.round(w) + 'px';
+                img.style.height = Math.round(h) + 'px';
+            }
+            if (img.complete) fit(); else img.addEventListener('load', fit);
+        });
+    })();
+    </script>
+
+    <!-- Hero logo line: a shine that sweeps left to right, letter by letter -->
+    <script>
+    (function() {
+        var title = document.querySelector('.hero-clients-title');
+        if (!title || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var i = 0;
+        (function split(node) {
+            Array.prototype.slice.call(node.childNodes).forEach(function(child) {
+                if (child.nodeType === 1) { split(child); return; }
+                if (child.nodeType !== 3) return;
+                var frag = document.createDocumentFragment();
+                child.textContent.split(/(\s+)/).forEach(function(part) {
+                    if (!part) return;
+                    if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+                    var word = document.createElement('span');
+                    word.className = 'sheen-word';
+                    part.split('').forEach(function(ch) {
+                        var c = document.createElement('span');
+                        c.className = 'sheen-char';
+                        c.style.setProperty('--i', i++);
+                        c.textContent = ch;
+                        word.appendChild(c);
+                    });
+                    frag.appendChild(word);
+                });
+                node.replaceChild(frag, child);
+            });
+        })(title);
+        title.setAttribute('aria-label', title.textContent);
+        title.classList.add('is-sheen');
+    })();
+    </script>
+
     <!-- first-party page-view beacon (no cookies, no IDs) - see beacon-worker/ -->
     <script>(function(){try{navigator.sendBeacon&&navigator.sendBeacon("https://icg-beacon.beacon-worker.workers.dev/pv",JSON.stringify({p:location.pathname,r:document.referrer}))}catch(e){}})();</script>
 </body>
