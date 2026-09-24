@@ -4325,3 +4325,12 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (max-width: 980px) { .stakes-cards--five { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .stakes-cards--five { grid-template-columns: 1fr; } }
 .stakes-cards--five .stakes-card-title { margin-bottom: 0.6rem; }
+
+/* Five cards on one line, tightened to fit */
+@media (min-width: 981px) {
+    .stakes-cards--five { grid-template-columns: repeat(5, 1fr); gap: var(--space-md); }
+    .stakes-cards--five .stakes-card { padding: var(--space-lg) var(--space-md); }
+    .stakes-cards--five .stakes-card-title { font-size: 0.95rem; line-height: 1.2; }
+    .stakes-cards--five .stakes-card p { font-size: 0.85rem; line-height: 1.55; }
+}
+.stakes-yes { margin-top: var(--space-lg); }
