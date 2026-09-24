@@ -4334,3 +4334,20 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     .stakes-cards--five .stakes-card p { font-size: 0.85rem; line-height: 1.55; }
 }
 .stakes-yes { margin-top: var(--space-lg); }
+
+/* Reality cards: a red glow at rest, stronger and slightly larger on hover */
+.stakes-card {
+    box-shadow: 0 10px 30px -14px rgba(232, 0, 13, 0.45);
+    transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s var(--ease-out), background 0.35s ease;
+    will-change: transform;
+}
+.stakes-card:hover,
+.stakes-card:focus-within {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--color-red);
+    box-shadow: 0 0 0 1px rgba(232, 0, 13, 0.4), 0 22px 50px -12px rgba(232, 0, 13, 0.6);
+    background: linear-gradient(180deg, rgba(232, 0, 13, 0.08) 0%, rgba(232, 0, 13, 0.02) 100%), var(--color-surface);
+}
+@media (prefers-reduced-motion: reduce) {
+    .stakes-card:hover { transform: none; }
+}
