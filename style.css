@@ -4398,3 +4398,36 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 }
 .tool-logo-item:hover img { opacity: 1; }
 .tool-logo-item:hover .tool-wordmark { color: #fff; }
+
+/* Full-width statement, in the style of a pull quote, before Founding Partners */
+.statement {
+    padding: var(--space-4xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.statement .container { position: relative; z-index: 1; }
+.statement-mark {
+    display: block;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    line-height: 0.4;
+    color: var(--color-red);
+    margin-bottom: var(--space-lg);
+}
+.statement-line {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.1rem, 5.6vw, 4.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: #f4f1ec;
+    max-width: 22ch;
+    margin: 0 auto;
+    text-wrap: balance;
+}
+.statement-line .text-accent { color: var(--color-red-light); }
+
+.statement, .statement * { text-align: center !important; }
+.statement-line { margin-left: auto !important; margin-right: auto !important; }
