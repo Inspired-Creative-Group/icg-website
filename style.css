@@ -4494,3 +4494,8 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (prefers-reduced-motion: reduce) {
     .statement-mark-logo { animation: none; }
 }
+/* Sandy's photo warms up to the same muted tone as Juan's colourised portrait */
+.team-member:hover .team-member-image img[src$="sandy.jpg"],
+.team-member:focus-within .team-member-image img[src$="sandy.jpg"] {
+    filter: grayscale(0) brightness(0.66) contrast(1.05) saturate(0.28);
+}
