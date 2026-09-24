@@ -4567,3 +4567,22 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 .stakes-section .section-header { margin-bottom: var(--space-lg); }
 .stakes-yes { margin-bottom: 0; }
 .stakes-cards { margin-top: var(--space-md); }
+
+/* Statement lines rise one after another when the section arrives */
+.statement-row { display: block; }
+.statement.is-in .statement-row,
+.statement .statement-row { will-change: transform, opacity; }
+.statement:not(.is-in) .statement-row { opacity: 0; transform: translateY(0.5em); }
+.statement.is-in .statement-row {
+    opacity: 0;
+    transform: translateY(0.5em);
+    animation: statementRise 0.9s var(--ease-out) forwards;
+}
+.statement.is-in .statement-row:nth-child(2) { animation-delay: 0.22s; }
+.statement.is-in .statement-row:nth-child(3) { animation-delay: 0.44s; }
+@keyframes statementRise {
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .statement .statement-row { opacity: 1 !important; transform: none !important; animation: none !important; }
+}

@@ -612,7 +612,7 @@
         <img class="statement-bg" src="assets/backgrounds/system-bg.jpg" alt="" loading="lazy" aria-hidden="true">
         <div class="container">
             <img class="statement-mark-logo" src="favicon-512x512.png" alt="" aria-hidden="true" width="96" height="96">
-            <p class="statement-line gsap-animate">Human-directed. AI-powered.<br> <span class="text-accent">Made to connect.</span></p>
+            <p class="statement-line gsap-animate"><span class="statement-row">Human-directed.</span><span class="statement-row">AI-powered.</span><span class="statement-row text-accent">Made to connect.</span></p>
         </div>
     </section>
 
@@ -1299,6 +1299,22 @@
                 card.classList.remove('is-playing');
             });
         });
+    })();
+    </script>
+
+    <!-- Statement: each line rises as the section comes into view -->
+    <script>
+    (function() {
+        var section = document.querySelector('.statement');
+        if (!section) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { section.classList.add('is-in'); return; }
+        if (!('IntersectionObserver' in window)) { section.classList.add('is-in'); return; }
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) { section.classList.add('is-in'); io.disconnect(); }
+            });
+        }, { threshold: 0.35 });
+        io.observe(section);
     })();
     </script>
 
