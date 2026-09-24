@@ -4504,3 +4504,20 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 .team-member:focus-within .team-member-image img[src$="sandy.jpg"] {
     filter: grayscale(0) brightness(0.78) contrast(1.06) saturate(0.78);
 }
+/* Discovery call button under the founding partners, centred, same pill as the menu */
+.about-cta { text-align: center !important; margin-top: var(--space-2xl); }
+.about-cta .nav-cta-btn {
+    background: transparent;
+    color: var(--color-red-light);
+    border: 1px solid var(--color-red-light);
+    border-radius: 999px;
+    box-shadow: none;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.85rem;
+}
+.about-cta .nav-cta-btn:hover,
+.about-cta .nav-cta-btn:focus-visible {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    color: var(--color-white);
+}
