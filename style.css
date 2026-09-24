@@ -4351,3 +4351,18 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (prefers-reduced-motion: reduce) {
     .stakes-card:hover { transform: none; }
 }
+
+/* Reality cards: a single grow-and-settle pulse on hover, rather than staying enlarged */
+.stakes-card:hover,
+.stakes-card:focus-within {
+    transform: none;
+    animation: stakesPulse 0.6s var(--ease-out);
+}
+@keyframes stakesPulse {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .stakes-card:hover, .stakes-card:focus-within { animation: none; }
+}
