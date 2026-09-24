@@ -4409,6 +4409,7 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     position: relative;
     overflow: hidden;
 }
+.statement-line { padding-top: var(--space-md); }
 .statement .container { position: relative; z-index: 1; }
 .statement-mark {
     display: block;
@@ -4469,4 +4470,14 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
         linear-gradient(180deg, var(--color-black) 0%, transparent 18%, transparent 82%, var(--color-black) 100%);
     z-index: 0;
     pointer-events: none;
+}
+/* ICG icon above the statement, in red, a little larger than the quote mark it replaced */
+.statement-mark-logo {
+    display: block;
+    width: clamp(64px, 7vw, 92px);
+    height: auto;
+    margin: 0 auto var(--space-lg);
+    /* the source mark is red on white: drop the white, keep the red */
+    mix-blend-mode: screen;
+    opacity: 0.95;
 }
