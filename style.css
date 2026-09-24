@@ -4563,3 +4563,7 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     }
     .nav-links .nav-cta-btn { align-self: flex-start; margin-top: var(--space-md); }
 }
+/* Less air between "Now You Can Say Yes." and the five cards */
+.stakes-section .section-header { margin-bottom: var(--space-lg); }
+.stakes-yes { margin-bottom: 0; }
+.stakes-cards { margin-top: var(--space-md); }
