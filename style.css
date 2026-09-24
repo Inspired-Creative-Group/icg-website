@@ -4500,10 +4500,6 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     filter: grayscale(0) brightness(0.66) contrast(1.05) saturate(0.28);
 }
 /* More colour in the hover, both portraits kept level with each other */
-.team-member:hover .team-member-image img[src$="juan-colour.jpg"],
-.team-member:focus-within .team-member-image img[src$="juan-colour.jpg"] {
-    filter: grayscale(0) brightness(1.02) contrast(1.06) saturate(2.6);
-}
 .team-member:hover .team-member-image img[src$="sandy.jpg"],
 .team-member:focus-within .team-member-image img[src$="sandy.jpg"] {
     filter: grayscale(0) brightness(0.78) contrast(1.06) saturate(0.78);
