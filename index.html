@@ -1283,22 +1283,47 @@
     <!-- Featured project cards: play a short silent clip while the pointer is over the card -->
     <script>
     (function() {
-        if (!window.matchMedia('(hover: hover)').matches) return;
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        document.querySelectorAll('.work-card-clip').forEach(function(video) {
-            var card = video.closest('.work-card');
-            if (!card) return;
-            card.addEventListener('mouseenter', function() {
-                var p = video.play();
-                if (p && p.catch) p.catch(function() {});
-                card.classList.add('is-playing');
+        var clips = document.querySelectorAll('.work-card-clip');
+        if (!clips.length) return;
+
+        if (window.matchMedia('(hover: hover)').matches) {
+            // Pointer devices: the clip plays while the pointer is over the card.
+            clips.forEach(function(video) {
+                var card = video.closest('.work-card');
+                if (!card) return;
+                card.addEventListener('mouseenter', function() {
+                    var p = video.play();
+                    if (p && p.catch) p.catch(function() {});
+                    card.classList.add('is-playing');
+                });
+                card.addEventListener('mouseleave', function() {
+                    video.pause();
+                    video.currentTime = 0;
+                    card.classList.remove('is-playing');
+                });
             });
-            card.addEventListener('mouseleave', function() {
-                video.pause();
-                video.currentTime = 0;
-                card.classList.remove('is-playing');
+            return;
+        }
+
+        // Touch devices: clips play while the card is on screen, and stop when it leaves.
+        if (!('IntersectionObserver' in window)) return;
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                var video = entry.target;
+                var card = video.closest('.work-card');
+                if (entry.isIntersecting) {
+                    video.preload = 'auto';
+                    var p = video.play();
+                    if (p && p.catch) p.catch(function() {});
+                    if (card) card.classList.add('is-playing');
+                } else {
+                    video.pause();
+                    if (card) card.classList.remove('is-playing');
+                }
             });
-        });
+        }, { threshold: 0.4 });
+        clips.forEach(function(video) { io.observe(video); });
     })();
     </script>
 
