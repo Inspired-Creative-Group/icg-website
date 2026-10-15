@@ -9,11 +9,16 @@ deploys on push to `main`.
 `Inspired-Creative-Group/productionbrain-site`, checked out at
 `~/Documents/AI - Programming Projects/productionbrain-site`.**
 
-The product is fully separated from this site (Juan, 2026-09-19): no nav or footer
-link, no sitemap entry, no llms.txt bullet, and the old `production-brain.html`
-redirect stub is deleted (no outreach ever used that URL). The page lives at
-<https://theproductionbrain.ai>. Whether the redesigned site links to it is decided at
-the redesign stage; do not add a link back on your own.
+The product is fully separated from this site (Juan, 2026-09-19): no page here, no
+sitemap entry, no llms.txt bullet, and the old `production-brain.html` redirect stub is
+deleted (no outreach ever used that URL). The product lives at
+<https://theproductionbrain.ai>.
+
+**Updated 2026-10-15:** the redesign-stage decision has been made. Sandy asked for an
+outbound link, so the top menu and the footer now carry a "The Production Brain" item
+that opens a short blurb panel with a link out to <https://theproductionbrain.ai>. It is
+a link only. Nothing else changed: no page here, and the sitemap and llms.txt are still
+untouched.
 
 The domain has "the" in it. Juan does not own `productionbrain.ai`; that belongs to
 someone else.
