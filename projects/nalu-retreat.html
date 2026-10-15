@@ -48,6 +48,17 @@
                         <a href="../index.html#faq" class="nav-link nav-sub-link">FAQ</a>
                     </div>
                 </div>
+                <div class="nav-item nav-item--sub nav-item--brain">
+                    <button type="button" class="nav-brain-trigger" aria-expanded="false" aria-controls="brainPanel">
+                        <img src="../assets/pb-logo.svg" alt="" aria-hidden="true" class="nav-brain-mark" width="19" height="20">
+                        <span>The Production Brain</span>
+                    </button>
+                    <div class="nav-sub nav-brain-panel" id="brainPanel">
+                        <p class="nav-brain-eyebrow">We built it for ourselves</p>
+                        <p class="nav-brain-copy">Every brief, every decision, every file. The Production Brain gives our AI tools one memory, so nothing gets re-explained and nothing gets lost. It changed how we work. Now we build it for other studios and businesses that want their own.</p>
+                        <a href="https://theproductionbrain.ai" target="_blank" rel="noopener" class="nav-brain-link">See The Production Brain</a>
+                    </div>
+                </div>
                 <a href="../index.html#contact" class="btn btn-primary nav-cta-btn">Schedule a Discovery Call</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -231,6 +242,17 @@
                     <a href="../index.html#work">Work</a>
                     <a href="../index.html#ai-innovation">A.I. Innovation</a>
                     <a href="../index.html#contact">Contact</a>
+                    <div class="footer-brain">
+                        <button type="button" class="footer-brain-trigger nav-brain-trigger" aria-expanded="false" aria-controls="brainPanelFooter">
+                            <img src="../assets/pb-logo.svg" alt="" aria-hidden="true" class="nav-brain-mark" width="17" height="18">
+                            <span>The Production Brain</span>
+                        </button>
+                        <div class="nav-brain-panel nav-brain-panel--up" id="brainPanelFooter">
+                            <p class="nav-brain-eyebrow">We built it for ourselves</p>
+                            <p class="nav-brain-copy">Every brief, every decision, every file. The Production Brain gives our AI tools one memory, so nothing gets re-explained and nothing gets lost. It changed how we work. Now we build it for other studios and businesses that want their own.</p>
+                            <a href="https://theproductionbrain.ai" target="_blank" rel="noopener" class="nav-brain-link">See The Production Brain</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Services</h4>
@@ -340,5 +362,6 @@
 
     <!-- first-party page-view beacon (no cookies, no IDs) - see beacon-worker/ -->
     <script>(function(){try{navigator.sendBeacon&&navigator.sendBeacon("https://icg-beacon.beacon-worker.workers.dev/pv",JSON.stringify({p:location.pathname,r:document.referrer}))}catch(e){}})();</script>
+    <script src="../pb-panel.js"></script>
 </body>
 </html>

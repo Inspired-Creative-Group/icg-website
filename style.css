@@ -4586,3 +4586,177 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (prefers-reduced-motion: reduce) {
     .statement .statement-row { opacity: 1 !important; transform: none !important; animation: none !important; }
 }
+
+/* ─── The Production Brain: standout menu item with a reveal panel ─── */
+.nav-item--brain { position: relative; }
+.nav-brain-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--color-gray-300);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+.nav-brain-trigger::after { display: none !important; }
+.nav-brain-mark {
+    width: auto;
+    height: 19px;
+    flex: none;
+    opacity: 0.85;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+.footer-brain-trigger .nav-brain-mark { height: 17px; }
+.nav-brain-trigger:hover .nav-brain-mark,
+.nav-item--brain.is-open .nav-brain-mark,
+.footer-brain.is-open .nav-brain-mark {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: brightness(1.5);
+}
+.nav-brain-trigger:hover span,
+.nav-item--brain.is-open .nav-brain-trigger span { color: var(--color-white); }
+
+.nav-brain-panel {
+    left: auto;
+    right: -1rem;
+    width: 23rem;
+    min-width: 0;
+    max-width: calc(100vw - 2rem);
+    padding: 1.15rem 1.25rem 1.25rem;
+    gap: 0.65rem;
+    text-align: left;
+}
+.nav-item--brain.is-open .nav-brain-panel,
+.nav-item--brain .nav-brain-trigger:focus-visible + .nav-brain-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.nav-brain-eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-red-light);
+    margin: 0;
+}
+.nav-brain-copy {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--color-gray-300);
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0;
+}
+.nav-brain-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    border: 1px solid var(--color-red);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.nav-brain-link::after { content: '\2192'; }
+.nav-brain-link:hover,
+.nav-brain-link:focus-visible { background: var(--color-red); color: var(--color-white); }
+
+/* Footer version: same panel, opens upward */
+.footer-brain { position: relative; width: 100%; margin-top: 0.35rem; }
+.footer-brain-trigger {
+    min-height: 36px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-gray-300);
+    transition: color 0.3s ease;
+}
+.footer-brain-trigger:hover,
+.footer-brain.is-open .footer-brain-trigger { color: var(--color-white); }
+.nav-brain-panel--up {
+    position: absolute;
+    bottom: calc(100% + 0.6rem);
+    top: auto;
+    left: 0;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 20;
+}
+.footer-brain:hover .nav-brain-panel--up,
+.footer-brain.is-open .nav-brain-panel--up,
+.footer-brain:focus-within .nav-brain-panel--up {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    /* Phone: the panel stays closed until it is tapped */
+    .nav-item--brain { width: 100%; }
+    .nav-links .nav-brain-trigger { font-size: 1.35rem; padding: 0.5rem 0; }
+    .nav-links .nav-brain-mark { height: 24px; }
+    .nav-brain-panel {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 0 0 1.1rem;
+        margin: 0.2rem 0 0 0.15rem;
+        border: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 0;
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        transition: opacity 0.25s ease, max-height 0.35s ease, visibility 0.25s;
+    }
+    .nav-item--brain.is-open .nav-brain-panel {
+        opacity: 1;
+        visibility: visible;
+        max-height: 30rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.3rem;
+    }
+    .nav-brain-panel--up {
+        position: static;
+        width: 100%;
+        margin-top: 0.5rem;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-brain-mark,
+    .nav-brain-panel,
+    .nav-brain-panel--up { transition: none; }
+    .nav-brain-trigger:hover .nav-brain-mark,
+    .nav-item--brain.is-open .nav-brain-mark { transform: none; }
+}
