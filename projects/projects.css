@@ -1708,3 +1708,5 @@ ul { list-style: none; }
     .nav-brain-trigger:hover .nav-brain-mark,
     .nav-item--brain.is-open .nav-brain-mark { transform: none; }
 }
+
+.nav-brain-copy strong { color: var(--color-white); font-weight: 600; }

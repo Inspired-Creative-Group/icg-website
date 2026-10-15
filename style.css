@@ -4760,3 +4760,5 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     .nav-brain-trigger:hover .nav-brain-mark,
     .nav-item--brain.is-open .nav-brain-mark { transform: none; }
 }
+
+.nav-brain-copy strong { color: var(--color-white); font-weight: 600; }
