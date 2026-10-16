@@ -1755,7 +1755,7 @@ ul { list-style: none; }
         bottom: auto;
         z-index: 9999;
         /* fixed, so no child (the Production Brain blurb) can stretch it */
-        width: 14.5rem;
+        width: 18rem;
         min-width: 0;
         max-width: calc(100vw - 2rem);
         max-height: calc(100vh - var(--nav-height) - 1.5rem);
