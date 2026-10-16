@@ -14,11 +14,19 @@ sitemap entry, no llms.txt bullet, and the old `production-brain.html` redirect 
 deleted (no outreach ever used that URL). The product lives at
 <https://theproductionbrain.ai>.
 
-**Updated 2026-10-15:** the redesign-stage decision has been made. Sandy asked for an
-outbound link, so the top menu and the footer now carry a "The Production Brain" item
-that opens a short blurb panel with a link out to <https://theproductionbrain.ai>. It is
-a link only. Nothing else changed: no page here, and the sitemap and llms.txt are still
-untouched.
+**Updated 2026-10-16:** the redesign-stage decision has been made, and it went further
+than a link. Sandy asked for all of this.
+
+- The top menu and the footer carry a "The Production Brain" item. The menu one opens a
+  short blurb panel; the footer one links straight out in a new tab.
+- The About section carries a Production Brain subsection under Founding Partners: the
+  product's name, mark, blurb, a link out, and the growing-brain animation ported from
+  productionbrain-site as `assets/hero-brain/INSTALL.md` specifies. That renderer is
+  632 KB of JavaScript. It loads only after the page has painted, needs WebGL, and
+  shows a single still frame under Reduce Motion.
+
+Still true: **there is no Production Brain page here**, and the sitemap, llms.txt and the
+old redirect stub are untouched. The product's own site is <https://theproductionbrain.ai>.
 
 The domain has "the" in it. Juan does not own `productionbrain.ai`; that belongs to
 someone else.
