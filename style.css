@@ -4921,6 +4921,8 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
         gap: var(--space-md);
         padding: var(--space-lg) 0;
     }
-    .about-brain-art { order: -1; }
+    /* the brain's frame reaches well above its anchor element, so the anchor
+       is pushed down to keep the whole thing below the grey rule */
+    .about-brain-art { order: -1; padding-top: 9rem; }
     .about-brain::before { right: auto; left: 50%; width: 86%; height: 60%; top: 26%; transform: translate(-50%, -50%); }
 }
