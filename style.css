@@ -4844,29 +4844,28 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 }
 
 /* The Production Brain subsection, under Founding Partners.
-   A panel so it stands out inside About without becoming its own section. */
+   No panel edges: the brain sits on a soft wash that fades into the section. */
 .about-brain {
     position: relative;
-    overflow: hidden;
     margin-top: var(--space-3xl);
-    padding: var(--space-2xl);
+    padding: var(--space-xl) 0;
     display: grid;
     grid-template-columns: 1.05fr 1fr;
     gap: var(--space-2xl);
     align-items: center;
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.92) 0%, rgba(10, 10, 10, 0.92) 100%);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
 }
-/* a low red wash in the corner, the same accent the rest of the page uses */
+/* the gradation under the brain, fading out in every direction */
 .about-brain::before {
     content: '';
     position: absolute;
-    top: -40%;
-    right: -10%;
-    width: 60%;
-    height: 180%;
-    background: radial-gradient(closest-side, var(--color-red-glow) 0%, transparent 100%);
+    top: 50%;
+    right: 2%;
+    width: 46%;
+    height: 150%;
+    transform: translateY(-50%);
+    background:
+        radial-gradient(closest-side, rgba(232, 0, 13, 0.16) 0%, rgba(232, 0, 13, 0.05) 45%, transparent 100%),
+        radial-gradient(closest-side, rgba(255, 170, 90, 0.07) 0%, transparent 70%);
     pointer-events: none;
 }
 .about-brain-text { position: relative; z-index: 1; }
@@ -4881,32 +4880,17 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
    Discovery Call button underneath it */
 .about-brain-link { font-size: 0.78rem; padding: 0.6rem 1.25rem; }
 
+/* the brain anchors itself to this element's painted box, so it has to be in
+   the layout. It is an empty frame: there is nothing to see in it. */
 .about-brain-art { position: relative; z-index: 1; }
-.about-brain-art img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    filter: saturate(0.25) contrast(1.05);
-    /* edges melt into the panel instead of sitting on it as a rectangle */
-    -webkit-mask-image: radial-gradient(78% 88% at 58% 50%, #000 28%, transparent 76%);
-            mask-image: radial-gradient(78% 88% at 58% 50%, #000 28%, transparent 76%);
-    animation: brainFloat 7s ease-in-out infinite;
-}
-@keyframes brainFloat {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
-}
+.about-brain-frame { display: block; width: 100%; height: auto; }
 
 @media (max-width: 900px) {
     .about-brain {
         grid-template-columns: 1fr;
-        gap: var(--space-lg);
-        padding: var(--space-xl) var(--space-lg);
+        gap: var(--space-md);
+        padding: var(--space-lg) 0;
     }
     .about-brain-art { order: -1; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .about-brain-art img { animation: none; }
+    .about-brain::before { right: auto; left: 50%; width: 86%; height: 60%; top: 26%; transform: translate(-50%, -50%); }
 }
