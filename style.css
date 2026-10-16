@@ -4842,3 +4842,20 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (max-width: 768px) {
     .nav-brain-panel--up { display: none; }
 }
+
+/* The Production Brain subsection, under Founding Partners */
+.about-brain {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+}
+.about-brain-copy {
+    max-width: 44rem;
+    margin: var(--space-md) 0 var(--space-lg);
+    color: var(--color-gray-300);
+    line-height: 1.7;
+}
+.about-brain-copy strong { color: var(--color-white); font-weight: 600; }
+/* the thin outline pill from the menu panel, so it stays quieter than the
+   Discovery Call button underneath it */
+.about-brain-link { font-size: 0.78rem; padding: 0.6rem 1.25rem; }
