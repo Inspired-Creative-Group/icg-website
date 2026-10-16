@@ -4869,6 +4869,16 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
     pointer-events: none;
 }
 .about-brain-text { position: relative; z-index: 1; }
+.about-brain-text .section-label { max-width: 30rem; }
+.about-brain-subhead {
+    margin-top: var(--space-sm);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gray-200);
+}
 .about-brain-copy {
     max-width: 34rem;
     margin: var(--space-md) 0 var(--space-lg);
