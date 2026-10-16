@@ -1759,8 +1759,16 @@ ul { list-style: none; }
         min-width: 0;
         max-width: calc(100vw - 2rem);
         max-height: calc(100vh - var(--nav-height) - 1.5rem);
+        /* iOS counts the strip under the browser toolbars inside 100vh, so the
+           box was taller than the screen actually shows and ran off the bottom.
+           svh is the viewport with those toolbars in place. */
+        max-height: calc(100svh - var(--nav-height) - 1.5rem);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        /* iOS inflates text inside some blocks unless this is pinned */
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
         background: #141414;
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 4px;
