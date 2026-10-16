@@ -4870,6 +4870,18 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 }
 .about-brain-text { position: relative; z-index: 1; }
 .about-brain-text .section-label { max-width: 30rem; }
+/* the mark sits above the title: the site's images are display:block, so this
+   is set deliberately rather than left to inline metrics */
+.about-brain-mark {
+    display: block;
+    height: 36px;
+    width: auto;
+    margin: 0 0 0.65rem;
+    opacity: 0.92;
+}
+@media (max-width: 900px) {
+    .about-brain-mark { height: 30px; }
+}
 .about-brain-subhead {
     margin-top: var(--space-sm);
     font-family: var(--font-heading);
