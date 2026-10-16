@@ -4842,3 +4842,87 @@ main h1, main h2, main h3, main h4, main p, main blockquote, .hero-video { margi
 @media (max-width: 768px) {
     .nav-brain-panel--up { display: none; }
 }
+
+/* The Production Brain subsection, under Founding Partners.
+   No panel edges: the brain sits on a soft wash that fades into the section. */
+/* Juan's block carried a 128px tail meant to clear the Discovery Call button.
+   With the subsection in between, that reads as a hole. */
+.about-team:has(+ .about-brain) { margin-bottom: var(--space-xl); }
+/* Juan's card also carries its own 96px tail, which collapses straight
+   through the list's bottom edge */
+.about-team:has(+ .about-brain) > .team-member:last-child { margin-bottom: 0; }
+.about-brain {
+    position: relative;
+    margin-top: 0;
+    /* a grey rule ties it to the rest of About instead of floating free */
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-xl) 0;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+}
+/* the gradation under the brain, fading out in every direction */
+.about-brain::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    width: 46%;
+    height: 150%;
+    transform: translateY(-50%);
+    background:
+        radial-gradient(closest-side, rgba(232, 0, 13, 0.16) 0%, rgba(232, 0, 13, 0.05) 45%, transparent 100%),
+        radial-gradient(closest-side, rgba(255, 170, 90, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+.about-brain-text { position: relative; z-index: 1; }
+.about-brain-text .section-label { max-width: 30rem; }
+/* the mark sits above the title: the site's images are display:block, so this
+   is set deliberately rather than left to inline metrics */
+.about-brain-mark {
+    display: block;
+    height: 36px;
+    width: auto;
+    margin: 0 0 0.65rem;
+    opacity: 0.92;
+}
+@media (max-width: 900px) {
+    .about-brain-mark { height: 30px; }
+}
+.about-brain-subhead {
+    margin-top: var(--space-sm);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gray-200);
+}
+.about-brain-copy {
+    max-width: 34rem;
+    margin: var(--space-md) 0 var(--space-lg);
+    color: var(--color-gray-300);
+    line-height: 1.7;
+}
+.about-brain-copy strong { color: var(--color-white); font-weight: 600; }
+/* the thin outline pill from the menu panel, so it stays quieter than the
+   Discovery Call button underneath it */
+.about-brain-link { font-size: 0.78rem; padding: 0.6rem 1.25rem; }
+
+/* the brain anchors itself to this element's painted box, so it has to be in
+   the layout. It is an empty frame: there is nothing to see in it. */
+.about-brain-art { position: relative; z-index: 1; }
+.about-brain-frame { display: block; width: 100%; height: auto; }
+
+@media (max-width: 900px) {
+    .about-brain {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        padding: var(--space-lg) 0;
+    }
+    /* the brain's frame reaches well above its anchor element, so the anchor
+       is pushed down to keep the whole thing below the grey rule */
+    .about-brain-art { order: -1; padding-top: 9rem; }
+    .about-brain::before { right: auto; left: 50%; width: 86%; height: 60%; top: 26%; transform: translate(-50%, -50%); }
+}
