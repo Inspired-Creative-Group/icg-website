@@ -1804,3 +1804,12 @@ ul { list-style: none; }
         padding: 0.5rem 1rem;
     }
 }
+
+/* Footer item is a direct link now, so it carries the link cursor and the
+   hover colour of the other footer links */
+.footer-brain-trigger { text-decoration: none; cursor: pointer; }
+
+/* On phones the footer entry is just the link, so the blurb panel is not shown */
+@media (max-width: 768px) {
+    .nav-brain-panel--up { display: none; }
+}
