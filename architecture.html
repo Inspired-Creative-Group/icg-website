@@ -24,13 +24,18 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P07TX5YY6H"></script>
+    <!-- Google tag (gtag.js). Loads only on the live domain, so local previews send nothing (2026-10-20). -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-P07TX5YY6H');
+        (function() {
+            if (!/^(www\.)?inspiredcreativegroupinc\.com$/.test(location.hostname)) return;
+            var s = document.createElement('script');
+            s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-P07TX5YY6H';
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', 'G-P07TX5YY6H');
+        })();
     </script>
 
     <!-- Fonts -->
